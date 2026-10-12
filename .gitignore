@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Next.js build outputs
+.next/
+frontend/.next/
+out/
+frontend/out/
+upload-ready/
+
+# TypeScript cache
+*.tsbuildinfo
+frontend/*.tsbuildinfo
+
+# Environment variables
+.env*
+!.env.example
+frontend/.env*
+!frontend/.env.example
+
+# Runtime & cache
+.sites-runtime/
+frontend/.sites-runtime/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#070e17"/>
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#00828a" stroke-width="1.5" stroke-opacity="0.5"/>
+  <!-- 4-blade turbine motif from Dynamic Air logo -->
+  <g fill="#00c2cb">
+    <!-- Top blade -->
+    <path d="M32 32 C32 20, 36 12, 42 12 C44 18, 40 26, 32 32 Z"/>
+    <!-- Right blade -->
+    <path d="M32 32 C44 32, 52 36, 52 42 C46 44, 38 40, 32 32 Z"/>
+    <!-- Bottom blade -->
+    <path d="M32 32 C32 44, 28 52, 22 52 C20 46, 24 38, 32 32 Z"/>
+    <!-- Left blade -->
+    <path d="M32 32 C20 32, 12 28, 12 22 C18 20, 26 24, 32 32 Z"/>
+  </g>
+  <circle cx="32" cy="32" r="4.5" fill="#f59e0b"/>
+</svg>

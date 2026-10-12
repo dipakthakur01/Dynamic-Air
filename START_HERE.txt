@@ -1,0 +1,16 @@
+DYNAMIC AIR SOLUTIONS PVT. LTD.
+
+frontend/        Editable Next.js frontend project (UI components, pages, design system)
+upload-ready/    Prebuilt website distribution for static hosting or cPanel
+DOMAIN_SETUP.md  Exact DNS records and launch choices
+
+Website: https://dynamic-air-nepal.thakurrn132.chatgpt.site
+Intended domain: https://dynamicair.com.np
+
+Business Contact:
+- Phone / WhatsApp: 9851123725 (+977 9851123725)
+- Email: sdynamicair@gmail.com
+- Products: Climix Q Series Air Curtains, Inverter Split ACs, Commercial VRF HVAC
+- Social Media: Facebook, Instagram, TikTok
+
+For development and customization, see frontend/README.md.
