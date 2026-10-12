@@ -13,8 +13,8 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import type { BusinessConfig } from '@/types';
-import SocialLinks from '@/components/ui/SocialLinks';
-import ThemeToggle from '@/components/ui/ThemeToggle';
+import SocialLinks from '../ui/SocialLinks';
+import ThemeToggle from '../ui/ThemeToggle';
 
 interface HeaderProps {
   business: BusinessConfig;
