@@ -69,7 +69,6 @@ const categories: Category[] = [
 
 export default function Home() {
   const [slide, setSlide] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [category, setCategory] = useState<Category>('All solutions');
   const [serviceOpen, setServiceOpen] = useState<number | null>(0);
@@ -182,28 +181,12 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (paused || reducedMotion || menuOpen || enquiryOpen || product) return;
+    if (menuOpen || enquiryOpen || product) return;
     const timer = window.setInterval(() => {
       if (!document.hidden) setSlide((value) => (value + 1) % slides.length);
-    }, 7500);
+    }, 6000);
     return () => window.clearInterval(timer);
-  }, [paused, reducedMotion, menuOpen, enquiryOpen, product]);
-
-  // Always auto-resume animation if paused
-  useEffect(() => {
-    if (!paused) return;
-    const resumeTimer = window.setTimeout(() => setPaused(false), 6000);
-    return () => window.clearTimeout(resumeTimer);
-  }, [paused]);
-
-  // Auto-resume animations when returning to tab
-  useEffect(() => {
-    const handleVisibility = () => {
-      if (!document.hidden) setPaused(false);
-    };
-    document.addEventListener('visibilitychange', handleVisibility);
-    return () => document.removeEventListener('visibilitychange', handleVisibility);
-  }, []);
+  }, [menuOpen, enquiryOpen, product]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -248,8 +231,6 @@ export default function Home() {
 
   const changeSlide = (index: number) => {
     setSlide((index + slides.length) % slides.length);
-    // Keep auto-resume active at all times
-    setPaused(false);
   };
 
   const visibleProducts = products.filter(
@@ -279,8 +260,6 @@ export default function Home() {
         <HeroSection
           slides={slides}
           slide={slide}
-          paused={paused}
-          setPaused={setPaused}
           onChangeSlide={changeSlide}
         />
 

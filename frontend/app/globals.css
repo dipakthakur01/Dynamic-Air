@@ -1339,13 +1339,6 @@ body.nav-drawer-open {
   height: 3px;
 }
 
-.play-control {
-  width: 34px;
-  height: 34px;
-  color: #d2e1eb;
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
 /* ==========================================================================
    EXPERTISE STRIP
    ========================================================================== */
@@ -3775,32 +3768,26 @@ input::placeholder, textarea::placeholder {
   }
 }
 
-/* Reduced Motion Support */
+/* Accessible Motion Support (Brand animations remain active & fluid across deployments) */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  *, *:before, *:after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  .hero-image {
-    transform: none;
-  }
-  .marquee-track {
-    animation: none;
-  }
-  .js-motion [data-reveal] {
-    opacity: 1;
-    transform: none;
-  }
-  .hero-copy {
-    animation: none;
-  }
-  .contact-wordmark svg {
-    animation: none;
-  }
+}
+
+.brand-logo-img {
+  animation: continuousFanSpin 7s linear infinite !important;
+  animation-play-state: running !important;
+}
+
+.brand:hover .brand-logo-img {
+  animation: continuousFanSpin 2s linear infinite !important;
+  animation-play-state: running !important;
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite !important;
+  animation-play-state: running !important;
 }
 
 /* ==========================================================================
@@ -4153,12 +4140,6 @@ input::placeholder, textarea::placeholder {
 
 [data-theme="light"] .slide-dots button.active {
   background: #00828a !important;
-}
-
-[data-theme="light"] .play-control {
-  background: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  color: #071523 !important;
 }
 
 /* Services Section Light Mode */

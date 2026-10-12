@@ -1,22 +1,18 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { Plus, Play, Pause } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import type { HeroSlide } from '@/types';
 
 interface HeroSectionProps {
   slides: HeroSlide[];
   slide: number;
-  paused: boolean;
-  setPaused: React.Dispatch<React.SetStateAction<boolean>>;
   onChangeSlide: (index: number) => void;
 }
 
 export default function HeroSection({
   slides,
   slide,
-  paused,
-  setPaused,
   onChangeSlide,
 }: HeroSectionProps) {
   const heroRef = useRef<HTMLElement>(null);
@@ -29,8 +25,6 @@ export default function HeroSection({
       ref={heroRef}
       aria-roledescription="carousel"
       aria-label="Dynamic Air introduction"
-      onMouseEnter={() => heroRef.current?.style.setProperty('--hero-hover', '1')}
-      onMouseLeave={() => heroRef.current?.style.setProperty('--hero-hover', '0')}
     >
       <div className="hero-images" aria-hidden="true">
         {slides.map((item, index) => (
@@ -104,14 +98,6 @@ export default function HeroSection({
                 />
               ))}
             </div>
-
-            <button
-              className="icon-button play-control"
-              aria-label={paused ? 'Play slideshow' : 'Pause slideshow'}
-              onClick={() => setPaused((value) => !value)}
-            >
-              {paused ? <Play size={14} /> : <Pause size={14} />}
-            </button>
           </div>
         </div>
       </div>
