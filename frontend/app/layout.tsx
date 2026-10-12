@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     images: [{ url: '/images/logo.jpeg', width: 1200, height: 630, alt: 'Dynamic Air Solutions' }],
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: 'googlee2fa6752e72140d2',
+  },
 };
 
 export default function RootLayout({
@@ -56,6 +59,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="googlee2fa6752e72140d2" />
+        <meta name="google-site-verification" content="e2fa6752e72140d2" />
         <link rel="apple-touch-icon" href="/images/logo-round.png" />
         <meta name="mobile-web-app-capable" content="yes" />
         <script
