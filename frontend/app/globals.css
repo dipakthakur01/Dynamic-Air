@@ -443,8 +443,9 @@ svg {
 .header-brand-badge {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   background: #ffffff;
-  padding: 6px 14px;
+  padding: 6px 12px 6px 8px;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 130, 138, 0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -453,6 +454,40 @@ svg {
 .brand:hover .header-brand-badge {
   transform: translateY(-1.5px);
   box-shadow: 0 8px 22px rgba(0, 194, 203, 0.35), 0 0 0 1.5px var(--cyan);
+}
+
+.brand-emblem-rotator {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.brand-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform-origin: center center;
+  animation: spin-slow 16s linear infinite;
+  animation-play-state: running !important;
+  will-change: transform;
+}
+
+.brand:hover .brand-emblem-img {
+  animation-duration: 4s;
+}
+
+.brand-logo-text {
+  height: 42px;
+  width: auto;
+  max-width: 185px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .brand-logo-full {
@@ -465,8 +500,17 @@ svg {
 
 @media (max-width: 768px) {
   .header-brand-badge {
-    padding: 5px 10px;
+    padding: 4px 8px 4px 6px;
+    gap: 5px;
     border-radius: 6px;
+  }
+  .brand-emblem-rotator {
+    width: 34px;
+    height: 34px;
+  }
+  .brand-logo-text {
+    height: 32px;
+    max-width: 140px;
   }
   .brand-logo-full {
     height: 34px;
@@ -476,7 +520,16 @@ svg {
 
 @media (max-width: 480px) {
   .header-brand-badge {
-    padding: 4px 8px;
+    padding: 3px 6px 3px 4px;
+    gap: 4px;
+  }
+  .brand-emblem-rotator {
+    width: 28px;
+    height: 28px;
+  }
+  .brand-logo-text {
+    height: 26px;
+    max-width: 115px;
   }
   .brand-logo-full {
     height: 30px;
