@@ -1118,8 +1118,8 @@ body.nav-drawer-open {
    ========================================================================== */
 
 .hero {
-  height: min(920px, 100svh);
-  min-height: 750px;
+  height: min(840px, 92svh);
+  min-height: 660px;
   position: relative;
   overflow: hidden;
   background: #060b12;
@@ -1270,7 +1270,7 @@ body.nav-drawer-open {
 .hero-caption {
   position: absolute;
   right: 24px;
-  bottom: 175px;
+  bottom: 120px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1318,13 +1318,13 @@ body.nav-drawer-open {
 
 .hero-bottom {
   position: absolute;
-  bottom: 35px;
+  bottom: 24px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 28px;
+  padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -3467,10 +3467,12 @@ input::placeholder, textarea::placeholder {
     display: inline-flex;
   }
   .hero {
-    height: 100svh;
-    min-height: 720px;
-    max-height: 900px;
+    height: auto;
+    min-height: 560px;
+    max-height: none;
     width: 100%;
+    position: relative;
+    overflow: hidden;
   }
   .hero-images,
   .hero-shade {
@@ -3496,19 +3498,37 @@ input::placeholder, textarea::placeholder {
   .hero-ambient-glow {
     opacity: 0.3;
   }
+  .hero-inner {
+    padding-top: 96px;
+    padding-bottom: 32px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .hero-copy {
-    width: 82%;
-    padding-bottom: 110px;
+    width: 85%;
+    padding-bottom: 0;
   }
   .hero h1 {
-    font-size: 70px;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
   }
   .hero-caption {
-    bottom: 143px;
-    right: 0;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 18px;
+    max-width: 460px;
+  }
+  .hero-bottom {
+    position: relative;
+    bottom: auto;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 460px;
   }
   .hero-buttons {
-    gap: 24px;
+    gap: 20px;
   }
   .strip-inner {
     flex-wrap: wrap;
@@ -3668,9 +3688,9 @@ input::placeholder, textarea::placeholder {
     font-size: 12px;
   }
   .hero {
-    height: 100svh;
-    min-height: 640px;
-    max-height: 900px;
+    height: auto;
+    min-height: unset;
+    max-height: none;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -3704,9 +3724,9 @@ input::placeholder, textarea::placeholder {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-top: clamp(94px, 13vh, 112px);
-    padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px));
-    height: 100%;
+    padding-top: clamp(84px, 11vh, 98px);
+    padding-bottom: 24px;
+    height: auto;
     position: relative;
     z-index: 2;
   }
@@ -3769,7 +3789,7 @@ input::placeholder, textarea::placeholder {
     bottom: auto;
     right: auto;
     left: auto;
-    margin-top: 16px;
+    margin-top: 14px;
     width: 100%;
     max-width: 440px;
     padding: 10px 14px;
@@ -3806,20 +3826,34 @@ input::placeholder, textarea::placeholder {
     display: none;
   }
   .hero-bottom {
-    position: absolute;
-    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
-    left: 0;
-    right: 0;
-    padding-top: 10px;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 14px;
+    padding-top: 12px;
     padding-inline: 0;
-    border-top: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 440px;
     z-index: 10;
   }
   .scroll-prompt {
-    display: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    color: #a3bac9;
+    font-weight: 600;
+  }
+  .scroll-prompt .scroll-line {
+    width: 16px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.35);
   }
   .slide-controls {
     display: flex;
