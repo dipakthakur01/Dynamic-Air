@@ -71,13 +71,14 @@ export default function EnquiryModal({
     new Set([
       interest,
       'Climix Q Series Air Curtain',
-      'Air curtains & doorway barrier',
-      'Inverter Split AC',
-      'Commercial VRF / Cassette HVAC',
-      'Installation & copper piping',
-      'Repair & gas charging',
-      'Annual maintenance contract (AMC)',
-      'General question',
+      'Residential Wall-Mounted Split AC',
+      'Commercial VRF System (100% Inverter)',
+      '4-Way Ceiling Cassette AC',
+      'Modular Cold Room (Chiller & Freezer)',
+      'HVAC Installation & Copper Piping',
+      'Repair & Gas Charging',
+      'Annual Maintenance Contract (AMC)',
+      'General enquiry',
     ])
   );
 

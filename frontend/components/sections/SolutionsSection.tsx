@@ -27,16 +27,16 @@ export default function SolutionsSection({
         <div className="section-heading" data-reveal>
           <div>
             <div className="section-eyebrow">
-              <span className="square-bullet" /> CLIMIX AIR CURTAINS &amp; COOLING
+              <span className="square-bullet" /> AIR CURTAINS, HVAC &amp; COLD STORAGE
             </div>
             <h2>
               Engineered air barriers.
-              <br /> <span className="muted-text">Precision climate control.</span>
+              <br /> <span className="muted-text">Precision climate &amp; cold storage.</span>
             </h2>
           </div>
           <p>
-            Discover Climix cross-flow air curtains, inverter split systems,
-            <br className="desktop-only" /> and complete commercial HVAC engineering.
+            Explore Climix air curtains, residential split systems,
+            <br className="desktop-only" /> commercial VRF networks, and modular cold rooms.
           </p>
         </div>
 

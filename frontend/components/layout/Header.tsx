@@ -31,9 +31,9 @@ interface HeaderProps {
 const detailedNavLinks = [
   {
     num: '01',
-    label: 'Air Curtains & Solutions',
+    label: 'Air Curtains & Cooling Solutions',
     id: 'solutions',
-    desc: 'Climix Q Series & Commercial Air Barriers',
+    desc: 'Climix Air Curtains, Split AC, VRF & Cold Rooms',
   },
   {
     num: '02',
@@ -112,19 +112,15 @@ export default function Header({
             aria-label="Dynamic Air Solutions Pvt. Ltd. home"
             onClick={() => setMenuOpen(false)}
           >
-            <img
-              src={business.logo}
-              alt="Dynamic Air Solutions Pvt. Ltd. Logo"
-              width={46}
-              height={46}
-              className="brand-logo-img"
-            />
-            <span className="brand-text">
-              <span className="brand-main">
-                DYNAMIC<span className="brand-air">AIR</span>
-              </span>
-              <small>SOLUTIONS PVT. LTD.</small>
-            </span>
+            <div className="header-brand-badge">
+              <img
+                src={business.logo}
+                alt="Dynamic Air Solutions Pvt. Ltd. - Complete Air Conditioning Solution"
+                width={220}
+                height={52}
+                className="brand-logo-full"
+              />
+            </div>
           </a>
 
           {/* Desktop Quick Nav */}

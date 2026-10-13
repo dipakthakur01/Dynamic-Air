@@ -10,8 +10,8 @@ export const business: BusinessConfig = {
   address: 'Kathmandu, Nepal',
   mapsUrl: '',
   openingHours: 'Sun – Fri: 9:00 AM – 6:30 PM',
-  logo: '/images/logo-round.png',
-  footerLogo: '/images/footer-logo.png',
+  logo: '/images/dynamic-air-logo.png',
+  footerLogo: '/images/dynamic-air-logo.png',
   socials: {
     facebook: 'https://www.facebook.com/share/1C7B7pXJVV/',
     instagram: 'https://www.instagram.com/dynamicairsolution?mdxt=NzJpeGJhNjlibGd1',
@@ -22,10 +22,11 @@ export const business: BusinessConfig = {
 export type { Category, Product, Service, FaqItem };
 
 export const products: Product[] = [
+  // 1. First: Climix Air Curtains
   {
     id: 'climix-q-series',
     name: 'Climix Q Series Air Curtain',
-    category: 'Air curtains',
+    category: 'Climix Air Curtains',
     label: 'CROSS FLOW WIND CURTAIN',
     image: '/images/climix-air-curtain-hero.png',
     description:
@@ -46,7 +47,7 @@ export const products: Product[] = [
   {
     id: 'air-curtain-commercial',
     name: 'Commercial Entrance Air Barrier Systems',
-    category: 'Air curtains',
+    category: 'Climix Air Curtains',
     label: 'ENERGY SAVING & DUSTPROOF',
     image: '/images/air-curtain-applications.png',
     description:
@@ -62,45 +63,9 @@ export const products: Product[] = [
     brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
   },
   {
-    id: 'split-ac',
-    name: 'Wall-Mounted Inverter Split AC',
-    category: 'Air conditioning',
-    label: 'RESIDENTIAL & OFFICE COOLING',
-    image: '/images/cooling.webp',
-    description:
-      'Energy-efficient DC inverter split cooling and heating systems engineered for whisper-quiet operation, rapid cooling, and low electricity consumption across Kathmandu and Nepal climates.',
-    features: [
-      'High energy-efficiency DC inverter rotary compressor',
-      'Rapid turbo cooling & gentle dehumidification modes',
-      'Room-by-room temperature precision and multi-layer filtration',
-      'Available in 1.0 Ton, 1.5 Ton, and 2.0 Ton capacities',
-    ],
-    idealFor: 'Bedrooms, living rooms, clinic cabins, and executive office spaces',
-  },
-  {
-    id: 'ceiling-cassette-ac',
-    name: '4-Way Ceiling Cassette Inverter AC',
-    category: 'Commercial HVAC',
-    label: '360° UNIFORM AIR DISTRIBUTION',
-    image: '/images/cassette-ac.jpg',
-    description:
-      'Flush-mount ceiling cassette system with 360-degree circular airflow delivery, built-in high-lift condensate drain pump, independent vane control, and ultra-low noise operation for premium commercial spaces.',
-    features: [
-      '360° circular airflow coverage eliminates cooling dead-zones',
-      'Whisper-quiet DC fan motor with intelligent temperature sensing',
-      'Built-in high-lift drain pump (up to 750mm lift)',
-      'Available in 2.0 Ton, 3.0 Ton, 4.0 Ton, and 5.0 Ton capacities',
-      'Washable high-density anti-dust and antibacterial air filters',
-    ],
-    idealFor:
-      'Restaurants, corporate conference halls, banks, retail showrooms, and luxury residences',
-    brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
-    specSummary: '2.0T – 5.0T · 360° Airflow · R32 / R410A Eco · High-Lift Pump',
-  },
-  {
     id: 'industrial-centrifugal-air-curtain',
     name: 'Industrial Heavy-Duty Air Curtain',
-    category: 'Air curtains',
+    category: 'Climix Air Curtains',
     label: 'HIGH-VELOCITY DOORWAY BARRIER',
     image: '/images/industrial-air-curtain.jpg',
     description:
@@ -117,23 +82,92 @@ export const products: Product[] = [
     brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
     specSummary: 'Up to 4.5m Doorway Height · 18–20 m/s Air Velocity · Heavy-Duty Motor',
   },
+
+  // 2. Second: Residential Air Conditioning Solutions
   {
-    id: 'commercial-hvac',
-    name: 'Commercial VRF & Cassette AC Solutions',
-    category: 'Commercial HVAC',
-    label: 'CENTRALIZED CLIMATE CONTROL',
-    image: '/images/service.webp',
-    imageClass: 'commercial-product',
+    id: 'residential-split-ac',
+    name: 'Wall-Mounted Split AC (Inverter & Normal)',
+    category: 'Residential Air Conditioning',
+    label: 'RESIDENTIAL HOME COOLING',
+    image: '/images/residential-split-ac.jpg',
     description:
-      'End-to-end commercial climate solutions: ceiling cassette units, ductable air conditioning, ventilation, and multi-zone VRF systems engineered around your commercial layout.',
+      'Engineered specifically for residential living rooms, bedrooms, and apartments across Kathmandu and Nepal. Available in both high-efficiency Inverter and durable Non-Inverter (Normal) configurations to match your household comfort and budget.',
     features: [
-      'Four-way ceiling cassette uniform air distribution',
-      'Centralized multi-room VRF / VRV architecture',
-      'Custom ducting layout, fresh air intake & exhaust integration',
-      'Bespoke BTU heat load calculation by HVAC specialists',
+      'Available in both DC Inverter (high energy savings) and Non-Inverter (Normal) models',
+      'Maximum application for residential purposes: bedrooms, apartments, and villas',
+      'Capacities available in 1.0 Ton, 1.5 Ton, and 2.0 Ton models',
+      'Rapid turbo cooling, whisper-quiet night sleep mode, and anti-dust air filtration',
+      '100% grooved inner copper piping for reliable heat exchange and longevity',
+      'Stable performance with wide voltage operating range',
     ],
     idealFor:
-      'Commercial buildings, corporate offices, showrooms, banquet halls & hospitality',
+      'Residential bedrooms, living halls, home offices, and apartment complexes',
+    specSummary: '1.0T – 2.0T · Inverter & Normal · R32 / R410A · Whisper Quiet',
+  },
+
+  // 3. Third: Commercial Air Conditioning Solutions
+  {
+    id: 'commercial-vrf-system',
+    name: 'Commercial VRF / VRV Air Conditioning (100% Inverter)',
+    category: 'Commercial Air Conditioning',
+    label: '100% INVERTER COMMERCIAL HVAC',
+    image: '/images/commercial-vrf-system.jpg',
+    description:
+      'High-capacity commercial VRF (Variable Refrigerant Flow) systems powered by 100% Inverter technology. Connects heavy-duty outdoor rooftop condenser banks to multiple indoor ceiling cassette and duct units with independent zone climate control.',
+    features: [
+      '100% Inverter compressor engineering: modulates power precisely to actual cooling demand',
+      'Commercial outdoor rooftop multi-unit banks serving up to 64+ independent indoor spaces',
+      'Extreme partial-load energy efficiency: cuts commercial electricity overhead up to 45%',
+      'Extended refrigerant piping length and height allowances for multi-story buildings',
+      'Intelligent central touch controllers and Building Management System (BMS) compatibility',
+      'Complete HVAC engineering: load calculation, copper piping layout, and scheduled servicing',
+    ],
+    idealFor:
+      'Commercial complexes, corporate offices, hotels, hospitals, bank branches & institutions',
+    specSummary: '100% Inverter · 8 HP to 96+ HP · Multi-Zone VRF · BMS Integration',
+  },
+  {
+    id: 'ceiling-cassette-ac',
+    name: '4-Way Ceiling Cassette AC (Inverter & Non-Inverter)',
+    category: 'Commercial Air Conditioning',
+    label: '360° OFFICE & SHOWROOM AIRFLOW',
+    image: '/images/cassette-ac.jpg',
+    description:
+      'Flush-mount ceiling cassette system delivering uniform 360-degree circular airflow with zero dead zones. Primarily utilized for modern office spaces, retail showrooms, and restaurants; available in both Inverter and Non-Inverter types.',
+    features: [
+      'Available in both Inverter and Non-Inverter (Normal) configurations',
+      'Mainly used for modern office spaces, banks, retail showrooms, and conference halls',
+      '360° circular airflow coverage eliminates localized hot or cold pockets',
+      'Built-in high-lift automatic condensate drain pump (up to 750mm lift)',
+      'Capacities available: 2.0 Ton, 3.0 Ton, 4.0 Ton, and 5.0 Ton',
+      'Sleek aesthetic ceiling panel with washable high-density anti-dust filters',
+    ],
+    idealFor:
+      'Office spaces, conference halls, retail showrooms, restaurants, and banks',
+    brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
+    specSummary: '2.0T – 5.0T · Inverter & Normal · 360° Airflow · Built-In Drain Pump',
+  },
+
+  // 4. Fourth: Cold Room Solutions
+  {
+    id: 'modular-cold-room',
+    name: 'Modular Cold Room Storage Solutions',
+    category: 'Cold Room Solutions',
+    label: 'CHILLER & FREEZER TEMPERATURE',
+    image: '/images/modular-cold-room.jpg',
+    description:
+      'Prefabricated modular cold rooms engineered for commercial preservation and storage. Built with high-density polyurethane (PUF) insulated sandwich panels and available in both Chiller and Freezer temperature configurations.',
+    features: [
+      'Dual temperature configurations: Chiller (+2°C to +8°C) and Freezer (-18°C to -25°C)',
+      'Primary use: commercial storage of perishables, dairy, pharmaceuticals, meat & produce',
+      'High-density PUF insulated panels with cam-lock tongue-and-groove joints',
+      'Heavy-duty walk-in insulated door with safety inside release handle and view window',
+      'Digital microcomputer temperature controller with automatic defrost cycle',
+      'Custom sizing tailored precisely to room dimensions, shelving, and storage volume',
+    ],
+    idealFor:
+      'Cold storage facilities, supermarkets, hotels, restaurants, dairy, pharmaceuticals & food processing',
+    specSummary: 'Chiller (+2° to +8°C) · Freezer (-18° to -25°C) · PUF Panels · Digital Controller',
   },
 ];
 

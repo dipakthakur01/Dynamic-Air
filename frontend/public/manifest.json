@@ -12,19 +12,19 @@
   "categories": ["business", "utilities", "shopping"],
   "icons": [
     {
-      "src": "/images/logo-round.png",
+      "src": "/images/logo-icon-emblem.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/logo-round.png",
+      "src": "/images/logo-icon-emblem.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/images/logo-round.png",
+      "src": "/images/logo-icon-emblem.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

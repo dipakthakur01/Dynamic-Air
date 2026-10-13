@@ -1,9 +1,9 @@
 export type Category =
   | 'All solutions'
-  | 'Air curtains'
-  | 'Air conditioning'
-  | 'Commercial HVAC'
-  | 'Home electronics';
+  | 'Climix Air Curtains'
+  | 'Residential Air Conditioning'
+  | 'Commercial Air Conditioning'
+  | 'Cold Room Solutions';
 
 export interface Product {
   id: string;

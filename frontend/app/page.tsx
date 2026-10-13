@@ -23,7 +23,7 @@ import type { Category, Product, HeroSlide } from '@/types';
 
 const slides: HeroSlide[] = [
   {
-    overline: 'AUTHORIZED CLIMIX AIR CURTAINS & HVAC',
+    overline: 'AUTHORIZED CLIMIX DISTRIBUTOR & PARTNER',
     line1: 'Clean air.',
     line2: 'Total comfort.',
     description:
@@ -47,24 +47,25 @@ const slides: HeroSlide[] = [
     mini: 'DUSTPROOF · THERMAL INSULATION · INSECT BARRIER',
   },
   {
-    overline: 'COMPLETE AIR CONDITIONING SOLUTIONS',
-    line1: 'Expert care.',
-    line2: 'Lasting performance.',
+    overline: 'COMPLETE HVAC & COLD ROOM SOLUTIONS',
+    line1: 'Engineered cooling.',
+    line2: 'Total reliability.',
     description:
-      'Precision room air conditioners, multi-zone commercial VRF systems, vacuum-tested copper piping, and certified preventive maintenance.',
+      'Residential inverter split ACs, 100% Inverter commercial VRF systems, modular cold rooms, and certified HVAC engineering across Nepal.',
     image: '/images/hero-slide-3-hvac.jpg',
     alt: 'Certified technician performing HVAC inspection and servicing',
-    caption: 'EXPERIENCED HVAC TECHNICIANS IN NEPAL',
+    caption: 'EXPERIENCED HVAC & COLD STORAGE SPECIALISTS IN NEPAL',
     tag: 'Here for the long run.',
-    mini: 'INSTALLATION · SERVICING · AMC CONTRACTS',
+    mini: 'RESIDENTIAL · VRF COMMERCIAL · COLD ROOMS · AMC',
   },
 ];
 
 const categories: Category[] = [
   'All solutions',
-  'Air curtains',
-  'Air conditioning',
-  'Commercial HVAC',
+  'Climix Air Curtains',
+  'Residential Air Conditioning',
+  'Commercial Air Conditioning',
+  'Cold Room Solutions',
 ];
 
 export default function Home() {
@@ -184,7 +185,7 @@ export default function Home() {
     if (menuOpen || enquiryOpen || product) return;
     const timer = window.setInterval(() => {
       if (!document.hidden) setSlide((value) => (value + 1) % slides.length);
-    }, 6000);
+    }, 10000);
     return () => window.clearInterval(timer);
   }, [menuOpen, enquiryOpen, product]);
 

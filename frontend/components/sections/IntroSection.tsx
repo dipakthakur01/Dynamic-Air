@@ -19,7 +19,7 @@ export default function IntroSection() {
             The right climate engineering protects your space, lowers energy bills, and ensures uninterrupted comfort.
           </p>
           <p>
-            At Dynamic Air Solutions Pvt. Ltd., we supply authorized Climix Q Series cross-flow air curtains, energy-efficient split air conditioning, and complete commercial HVAC services. From precision doorway sizing to long-term maintenance, we deliver reliable cooling across Nepal.
+            At Dynamic Air Solutions Pvt. Ltd., we supply authorized Climix Q Series cross-flow air curtains, residential split air conditioning, commercial VRF &amp; cassette systems, and modular walk-in cold rooms. From doorway hygiene sizing to centralized commercial HVAC engineering and long-term maintenance, we deliver reliable climate solutions across Nepal.
           </p>
           <div className="intro-principles">
             <span>
@@ -28,11 +28,15 @@ export default function IntroSection() {
             </span>
             <span>
               <Check size={15} />
-              Precision Heat-Load Sizing
+              Residential &amp; Commercial VRF
             </span>
             <span>
               <Check size={15} />
-              Dedicated After-Sales &amp; AMC
+              Chiller &amp; Freezer Cold Rooms
+            </span>
+            <span>
+              <Check size={15} />
+              Professional After-Sales &amp; AMC
             </span>
           </div>
         </div>

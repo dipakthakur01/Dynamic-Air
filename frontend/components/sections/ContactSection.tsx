@@ -27,7 +27,7 @@ export default function ContactSection({
             with a conversation.
           </h2>
           <p>
-            Climix air curtains, room cooling, or commercial HVAC engineering.
+            Climix air curtains, residential cooling, commercial VRF, or modular cold rooms.
             <br className="desktop-only" /> Call, WhatsApp, or enquire today for quotations and on-site assessments.
           </p>
           <div className="contact-cta-row">
@@ -37,7 +37,7 @@ export default function ContactSection({
             {business.whatsapp && (
               <a
                 href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
-                  'Hello Dynamic Air Solutions, I would like to enquire about Climix air curtains and cooling solutions.'
+                  'Hello Dynamic Air Solutions, I would like to enquire about Climix air curtains, air conditioning, and cold room solutions.'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -56,22 +56,25 @@ export default function ContactSection({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle
-              cx="32"
-              cy="32"
-              r="30"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeDasharray="4 4"
-              opacity="0.5"
-            />
-            <g fill="currentColor">
-              <path d="M32 32 C32 18, 38 8, 45 8 C48 16, 42 26, 32 32 Z" opacity="0.95" />
-              <path d="M32 32 C46 32, 56 38, 56 45 C48 48, 38 42, 32 32 Z" opacity="0.95" />
-              <path d="M32 32 C32 46, 26 56, 19 56 C16 48, 22 38, 32 32 Z" opacity="0.95" />
-              <path d="M32 32 C18 32, 8 26, 8 19 C16 16, 26 22, 32 32 Z" opacity="0.95" />
+            <rect x="8" y="4" width="48" height="26" rx="6" fill="#00828a" />
+            <g stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="32" y1="8" x2="32" y2="26" />
+              <line x1="23" y1="17" x2="41" y2="17" />
+              <line x1="25.5" y1="10.5" x2="38.5" y2="23.5" />
+              <line x1="25.5" y1="23.5" x2="38.5" y2="10.5" />
             </g>
-            <circle cx="32" cy="32" r="5" fill="#f59e0b" />
+            <rect x="8" y="34" width="48" height="26" rx="6" fill="#ea9223" />
+            <circle cx="32" cy="47" r="4.8" fill="#ffffff" />
+            <g stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round">
+              <line x1="32" y1="38" x2="32" y2="40.5" />
+              <line x1="32" y1="53.5" x2="32" y2="56" />
+              <line x1="23" y1="47" x2="25.5" y2="47" />
+              <line x1="38.5" y1="47" x2="41" y2="47" />
+              <line x1="25.6" y1="40.6" x2="27.4" y2="42.4" />
+              <line x1="36.6" y1="51.6" x2="38.4" y2="53.4" />
+              <line x1="25.6" y1="53.4" x2="27.4" y2="51.6" />
+              <line x1="36.6" y1="42.4" x2="38.4" y2="40.6" />
+            </g>
           </svg>
           <span>
             DYNAMIC AIR

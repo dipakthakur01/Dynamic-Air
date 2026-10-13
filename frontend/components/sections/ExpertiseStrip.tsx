@@ -1,26 +1,30 @@
 import React from 'react';
-import { Wind, Snowflake, Wrench, Building2 } from 'lucide-react';
+import { Wind, Snowflake, Building2, Box, Wrench } from 'lucide-react';
 
 export default function ExpertiseStrip() {
   return (
     <div className="expertise-strip">
       <div className="container strip-inner">
-        <span>ENGINEERED AIR SOLUTIONS</span>
+        <span>ENGINEERED AIR &amp; COOLING</span>
         <div>
           <Wind size={18} />
           Climix Air Curtains
         </div>
         <div>
           <Snowflake size={18} />
-          Inverter Split AC
-        </div>
-        <div>
-          <Wrench size={18} />
-          HVAC Installation &amp; AMC
+          Residential Split AC
         </div>
         <div>
           <Building2 size={18} />
-          Commercial VRF Systems
+          Commercial VRF &amp; Cassette
+        </div>
+        <div>
+          <Box size={18} />
+          Modular Cold Rooms
+        </div>
+        <div>
+          <Wrench size={18} />
+          HVAC Services &amp; AMC
         </div>
       </div>
     </div>

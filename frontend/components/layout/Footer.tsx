@@ -46,7 +46,7 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
               {business.tagline} &middot; Authorized Climix Air Curtains
             </p>
             <p className="footer-description">
-              Professional cross-flow air curtains, commercial HVAC systems, and residential split air conditioning services across Nepal.
+              Climix cross-flow air curtains, residential split air conditioning, commercial VRF systems, and modular cold room solutions across Nepal.
             </p>
 
             {business.socials && (
@@ -59,10 +59,10 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
 
           <nav aria-label="Footer solutions">
             <span>SOLUTIONS &amp; PRODUCTS</span>
-            <a href="#solutions">Climix Q Series Air Curtains</a>
-            <a href="#solutions">Commercial Wind Barriers</a>
-            <a href="#solutions">Inverter Split Air Conditioners</a>
-            <a href="#solutions">VRF &amp; Cassette HVAC</a>
+            <a href="#solutions">Climix Air Curtains</a>
+            <a href="#solutions">Residential Split AC</a>
+            <a href="#solutions">Commercial VRF &amp; Cassette</a>
+            <a href="#solutions">Modular Cold Rooms</a>
             <a href="/docs/climix-air-curtain-catalog.pdf" target="_blank" rel="noopener noreferrer">
               Download Climix Catalog (PDF)
             </a>
@@ -125,7 +125,7 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
           </span>
 
           <span>
-            Climix Air Curtains &middot; Air Conditioning &middot; HVAC Engineering
+            Climix Air Curtains &middot; Air Conditioning &middot; Cold Rooms &middot; HVAC AMC
           </span>
         </div>
       </div>
