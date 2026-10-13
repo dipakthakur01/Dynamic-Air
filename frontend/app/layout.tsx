@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dynamicair.com.np'),
   title: 'Dynamic Air Solutions Pvt. Ltd. | Climix Air Curtains, HVAC & Cold Rooms Nepal',
   description:
-    'Dynamic Air Solutions Pvt. Ltd. – Authorized Climix Q Series Cross Flow Air Curtains, Residential Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Professional HVAC Installation & AMC in Kathmandu, Nepal. Contact: 9851123725 / sdynamicair@gmail.com.',
+    'Dynamic Air Solutions Pvt. Ltd. – Authorized Climix Q Series Cross Flow Air Curtains, Residential Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Professional HVAC Installation & AMC in Kathmandu, Nepal. Contact: 9851123725 / 9715023725 | sdynamicair@gmail.com.',
   manifest: '/manifest.json',
   alternates: { canonical: '/' },
   icons: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'Dynamic Air Solutions Pvt. Ltd.',
     title: 'Dynamic Air Solutions Pvt. Ltd. | Complete Air Conditioning & Cold Storage Solution',
     description:
-      'Authorized Climix Air Curtains, Residential Split ACs, Commercial VRF Systems, Modular Cold Rooms & HVAC Engineering Services in Nepal. Tel: 9851123725.',
+      'Authorized Climix Air Curtains, Residential Split ACs, Commercial VRF Systems, Modular Cold Rooms & HVAC Engineering Services in Nepal. Tel: 9851123725 / 9715023725.',
     url: 'https://dynamicair.com.np',
     images: [{ url: '/images/dynamic-air-logo.png', width: 1200, height: 630, alt: 'Dynamic Air Solutions' }],
   },

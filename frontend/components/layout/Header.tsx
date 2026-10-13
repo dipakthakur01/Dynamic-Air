@@ -142,16 +142,32 @@ export default function Header({
 
           {/* Header Actions */}
           <div className="header-actions">
-            {/* Direct Phone Link (Desktop Pill) */}
+            {/* Direct Phone Link (Combined Single Desktop Pill) */}
             {business.phone && (
-              <a
-                href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
-                className="header-phone-link desktop-only"
-                title="Call Dynamic Air"
-              >
-                <Phone size={14} />
-                <span>{business.phone}</span>
-              </a>
+              <div className="header-phone-link desktop-only">
+                <Phone size={13} />
+                <div className="header-phone-numbers-group">
+                  <a
+                    href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
+                    className="header-phone-sublink"
+                    title={`Call ${business.phone}`}
+                  >
+                    {business.phone}
+                  </a>
+                  {business.phone2 && (
+                    <>
+                      <span className="header-phone-slash">/</span>
+                      <a
+                        href={`tel:${business.phone2.replace(/[^+\d]/g, '')}`}
+                        className="header-phone-sublink"
+                        title={`Call ${business.phone2}`}
+                      >
+                        {business.phone2}
+                      </a>
+                    </>
+                  )}
+                </div>
+              </div>
             )}
 
             {/* Direct Phone Call Button (Mobile Circular Button) */}
@@ -288,13 +304,29 @@ export default function Header({
             <span className="drawer-nav-caption">DIRECT ASSISTANCE</span>
             <div className="drawer-actions-grid">
               {business.phone && (
-                <a
-                  href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
-                  className="drawer-action-chip chip-phone"
-                >
+                <div className="drawer-action-chip chip-phone">
                   <Phone size={14} />
-                  <span>Call {business.phone}</span>
-                </a>
+                  <span>Call: </span>
+                  <div className="header-phone-numbers-group">
+                    <a
+                      href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
+                      className="drawer-phone-sublink"
+                    >
+                      {business.phone}
+                    </a>
+                    {business.phone2 && (
+                      <>
+                        <span className="drawer-phone-slash">/</span>
+                        <a
+                          href={`tel:${business.phone2.replace(/[^+\d]/g, '')}`}
+                          className="drawer-phone-sublink"
+                        >
+                          {business.phone2}
+                        </a>
+                      </>
+                    )}
+                  </div>
+                </div>
               )}
               {business.whatsapp && (
                 <a

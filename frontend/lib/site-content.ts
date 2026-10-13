@@ -6,6 +6,7 @@ export const business: BusinessConfig = {
   domain: 'https://dynamicair.com.np',
   email: 'sdynamicair@gmail.com',
   phone: '9851123725',
+  phone2: '9715023725',
   whatsapp: '9779851123725', // International format for WhatsApp API: 977 9851123725
   address: 'Kathmandu, Nepal',
   mapsUrl: '',
@@ -123,7 +124,7 @@ export const products: Product[] = [
       'Complete HVAC engineering: load calculation, copper piping layout, and scheduled servicing',
     ],
     idealFor:
-      'Commercial complexes, corporate offices, hotels, hospitals, bank branches & institutions',
+      'Luxury residences, commercial complexes, corporate offices, hotels, hospitals, bank branches & institutions',
     specSummary: '100% Inverter · 8 HP to 96+ HP · Multi-Zone VRF · BMS Integration',
   },
   {
@@ -139,13 +140,13 @@ export const products: Product[] = [
       'Mainly used for modern office spaces, banks, retail showrooms, and conference halls',
       '360° circular airflow coverage eliminates localized hot or cold pockets',
       'Built-in high-lift automatic condensate drain pump (up to 750mm lift)',
-      'Capacities available: 2.0 Ton, 3.0 Ton, 4.0 Ton, and 5.0 Ton',
+      'Capacities available: 2.0 Ton, 3.0 Ton, and 4.0 Ton (2.0TR – 4.0TR)',
       'Sleek aesthetic ceiling panel with washable high-density anti-dust filters',
     ],
     idealFor:
       'Office spaces, conference halls, retail showrooms, restaurants, and banks',
     brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
-    specSummary: '2.0T – 5.0T · Inverter & Normal · 360° Airflow · Built-In Drain Pump',
+    specSummary: '2.0TR – 4.0TR · Inverter & Normal · 360° Airflow · Built-In Drain Pump',
   },
 
   // 4. Fourth: Cold Room Solutions
@@ -235,12 +236,12 @@ export const faqs: FaqItem[] = [
   {
     question: 'Which size Climix air curtain is suitable for my door?',
     answer:
-      'Climix Q Series models come in standard door widths: 90 cm (HFM-1209Q), 120 cm (HFM-1212Q), 150 cm (HFM-1215Q), and 180 cm (HFM-1218Q). For wider commercial openings or loading docks, units can be joined side by side. Call or WhatsApp us at 9851123725 for door sizing advice.',
+      'Climix Q Series models come in standard door widths: 90 cm (HFM-1209Q), 120 cm (HFM-1212Q), 150 cm (HFM-1215Q), and 180 cm (HFM-1218Q). For wider commercial openings or loading docks, units can be joined side by side. Call or WhatsApp us at 9851123725 / 9715023725 for door sizing advice.',
   },
   {
     question: 'How can I contact Dynamic Air Solutions Pvt. Ltd. for enquiries?',
     answer:
-      'You can call or WhatsApp us directly at 9851123725, email us at sdynamicair@gmail.com, or use the interactive enquiry form on this website to prepare and send your specifications.',
+      'You can call or WhatsApp us directly at 9851123725 / 9715023725, email us at sdynamicair@gmail.com, or use the interactive enquiry form on this website to prepare and send your specifications.',
   },
   {
     question: 'Do you provide on-site installation and maintenance in Kathmandu?',

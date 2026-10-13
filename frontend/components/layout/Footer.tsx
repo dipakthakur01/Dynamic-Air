@@ -32,12 +32,12 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
         <div className="footer-top">
           <div className="footer-brand-column">
             <a href="#home" className="footer-brand" aria-label="Dynamic Air Solutions Pvt. Ltd.">
-              <div className="footer-logo-badge">
+              <div className="footer-logo-wrap">
                 <img
-                  src={business.footerLogo}
+                  src="/images/footer-logo-transparent.png"
                   alt={business.name}
-                  width={260}
-                  height={86}
+                  width={320}
+                  height={72}
                   className="footer-logo-img"
                 />
               </div>
@@ -46,7 +46,7 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
               {business.tagline} &middot; Authorized Climix Air Curtains
             </p>
             <p className="footer-description">
-              Climix cross-flow air curtains, residential split air conditioning, commercial VRF systems, and modular cold room solutions across Nepal.
+              Authorized distributor of Climix Q Series cross-flow air curtains, residential split air conditioning, commercial 100% Inverter VRF systems, and modular walk-in cold rooms across Nepal.
             </p>
 
             {business.socials && (
@@ -80,9 +80,29 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
           <nav aria-label="Footer contact">
             <span>DIRECT CONTACT</span>
             {business.phone && (
-              <a href={`tel:${business.phone.replace(/[^+\d]/g, '')}`} className="footer-contact-link">
-                <Phone size={14} /> Call: {business.phone}
-              </a>
+              <div className="footer-contact-link footer-contact-phone-item">
+                <Phone size={14} />
+                <span>Call: </span>
+                <a
+                  href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
+                  className="footer-phone-sublink"
+                  title={`Call ${business.phone}`}
+                >
+                  {business.phone}
+                </a>
+                {business.phone2 && (
+                  <>
+                    <span className="footer-phone-slash">/</span>
+                    <a
+                      href={`tel:${business.phone2.replace(/[^+\d]/g, '')}`}
+                      className="footer-phone-sublink"
+                      title={`Call ${business.phone2}`}
+                    >
+                      {business.phone2}
+                    </a>
+                  </>
+                )}
+              </div>
             )}
             {business.whatsapp && (
               <a

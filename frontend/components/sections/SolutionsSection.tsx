@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Plus, Sparkles, Download, FileText } from 'lucide-react';
 import type { Category, Product } from '@/types';
 
@@ -21,6 +23,7 @@ export default function SolutionsSection({
   onSelectProduct,
   onOpenEnquiry,
 }: SolutionsSectionProps) {
+  const router = useRouter();
   return (
     <section id="solutions" className="solutions-section section-pad">
       <div className="container">
@@ -57,14 +60,26 @@ export default function SolutionsSection({
         <div className="product-grid" aria-live="polite">
           {products.map((item, index) => (
             <article
-              className="product-card"
+              className="product-card clickable-product-card"
               key={item.id}
               style={{ animationDelay: `${index * 80}ms` }}
+              onClick={(e) => {
+                const target = e.target as HTMLElement;
+                if (target.closest('.product-brochure-link')) return;
+                router.push(`/solutions/${item.id}`);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  router.push(`/solutions/${item.id}`);
+                }
+              }}
+              role="link"
+              tabIndex={0}
+              aria-label={`Inspect ${item.name} specifications and architecture`}
             >
-              <button
+              <div
                 className="product-image-button"
-                aria-label={`Explore ${item.name}`}
-                onClick={() => onSelectProduct(item)}
+                aria-hidden="true"
               >
                 <img
                   className={item.imageClass || ''}
@@ -78,13 +93,13 @@ export default function SolutionsSection({
                 <span className="product-open">
                   <Plus size={23} />
                 </span>
-              </button>
+              </div>
               <div className="product-body">
                 <span className="micro-label">{item.label}</span>
                 <h3>
-                  <button onClick={() => onSelectProduct(item)}>
+                  <Link href={`/solutions/${item.id}`} onClick={(e) => e.stopPropagation()}>
                     {item.name}
-                  </button>
+                  </Link>
                 </h3>
                 {item.specSummary && (
                   <div className="product-specs-preview">
@@ -93,12 +108,13 @@ export default function SolutionsSection({
                 )}
                 <p>{item.description}</p>
                 <div className="product-card-actions">
-                  <button
+                  <Link
+                    href={`/solutions/${item.id}`}
                     className="product-link"
-                    onClick={() => onSelectProduct(item)}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     View specifications <Plus size={16} />
-                  </button>
+                  </Link>
                   {item.brochureUrl && (
                     <a
                       href={item.brochureUrl}

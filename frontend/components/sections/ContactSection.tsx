@@ -86,15 +86,31 @@ export default function ContactSection({
 
       <div className="container business-details">
         {business.phone && (
-          <a
-            href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
-            className="business-badge-link"
-          >
+          <div className="business-badge-link">
             <Phone size={18} />
             <span>
-              <strong>Call Us:</strong> {business.phone}
+              <strong>Call Us:</strong>{' '}
+              <a
+                href={`tel:${business.phone.replace(/[^+\d]/g, '')}`}
+                className="contact-phone-sublink"
+                title={`Call ${business.phone}`}
+              >
+                {business.phone}
+              </a>
+              {business.phone2 && (
+                <>
+                  <span className="contact-phone-slash">/</span>
+                  <a
+                    href={`tel:${business.phone2.replace(/[^+\d]/g, '')}`}
+                    className="contact-phone-sublink"
+                    title={`Call ${business.phone2}`}
+                  >
+                    {business.phone2}
+                  </a>
+                </>
+              )}
             </span>
-          </a>
+          </div>
         )}
 
         {business.email && (

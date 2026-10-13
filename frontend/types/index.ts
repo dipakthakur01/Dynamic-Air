@@ -57,6 +57,7 @@ export interface BusinessConfig {
   domain: string;
   email: string;
   phone: string;
+  phone2?: string;
   whatsapp: string;
   address: string;
   mapsUrl: string;
