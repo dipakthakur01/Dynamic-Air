@@ -171,15 +171,6 @@ export default function ServicesSection({
                     hidden={!expanded}
                   >
                     <div>
-                      {/* Mobile-only inline preview thumbnail */}
-                      <div className="service-mobile-thumbnail">
-                        <img
-                          src={item.image || '/images/service.webp'}
-                          alt={item.imageAlt || item.title}
-                          loading="lazy"
-                        />
-                      </div>
-
                       <p className="service-desc">{item.description}</p>
                       <ul className="service-points">
                         {item.points.map((point) => (
