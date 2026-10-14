@@ -118,23 +118,23 @@ export default function Header({
                 <img
                   src="/images/emblem-rotating.png"
                   alt="Dynamic Air rotating emblem"
-                  width={46}
-                  height={46}
+                  width={44}
+                  height={44}
                   className="brand-emblem-img"
                 />
               </div>
               <img
                 src="/images/dynamic-air-text.png"
                 alt={business.name}
-                width={195}
-                height={46}
+                width={162}
+                height={44}
                 className="brand-logo-text brand-logo-text-light"
               />
               <img
                 src="/images/dynamic-air-text-dark.png"
                 alt={business.name}
-                width={195}
-                height={46}
+                width={162}
+                height={44}
                 className="brand-logo-text brand-logo-text-dark"
               />
             </div>

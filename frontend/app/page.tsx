@@ -63,10 +63,10 @@ const slides: HeroSlide[] = [
 const categories: Category[] = [
   'All solutions',
   'Climix Air Curtains',
-  'Air Purifiers',
   'Residential Air Conditioning',
   'Commercial Air Conditioning',
   'Cold Room Solutions',
+  'Air Purifiers',
 ];
 
 export default function Home() {

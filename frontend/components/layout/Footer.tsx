@@ -34,11 +34,18 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
             <a href="#home" className="footer-brand" aria-label="Dynamic Air Solutions Pvt. Ltd.">
               <div className="footer-logo-wrap">
                 <img
+                  src="/images/dynamic-air-logo.png"
+                  alt={business.name}
+                  width={320}
+                  height={72}
+                  className="footer-logo-img footer-logo-light"
+                />
+                <img
                   src="/images/footer-logo-transparent.png"
                   alt={business.name}
                   width={320}
                   height={72}
-                  className="footer-logo-img"
+                  className="footer-logo-img footer-logo-dark"
                 />
               </div>
             </a>
@@ -60,10 +67,10 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
           <nav aria-label="Footer solutions">
             <span>SOLUTIONS &amp; PRODUCTS</span>
             <a href="#solutions">Climix Air Curtains</a>
-            <a href="#solutions">Smart HEPA Air Purifiers</a>
             <a href="#solutions">Residential Split AC</a>
             <a href="#solutions">VRF Systems (4 HP Mini to Commercial)</a>
             <a href="#solutions">Modular Cold Rooms</a>
+            <a href="#solutions">Smart HEPA Air Purifiers</a>
             <a href="/docs/climix-air-curtain-catalog.pdf" target="_blank" rel="noopener noreferrer">
               Download Climix Catalog (PDF)
             </a>

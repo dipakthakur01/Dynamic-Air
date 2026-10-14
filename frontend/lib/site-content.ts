@@ -84,33 +84,7 @@ export const products: Product[] = [
     specSummary: 'Up to 4.5m Doorway Height · 18–20 m/s Air Velocity · Heavy-Duty Motor',
   },
 
-  // 2. Second: Air Purifiers (Clean Air & HEPA Solutions)
-  {
-    id: 'hepa-air-purifier',
-    name: 'Smart HEPA Air Purifier (Home & Commercial)',
-    category: 'Air Purifiers',
-    label: 'TRUE HEPA & ACTIVATED CARBON',
-    image: '/images/hepa-air-purifier.jpg',
-    imageClass: 'air-purifier-img',
-    description:
-      'High-performance indoor air purification system engineered to eliminate airborne dust, pollutants, allergens, and harmful germs. Featuring True HEPA + Activated Carbon filtration with 450 m³/h Clean Air Delivery Rate (CADR). Available in different sizes to match diverse room volumes and spaces across homes and executive offices.',
-    features: [
-      'Available in multiple room sizes and capacities tailored for residential & commercial spaces',
-      'High Clean Air Delivery Rate: CADR 450 m³/h for rapid whole-room air circulation',
-      'Dual multi-stage filtration: Medical-grade True HEPA + High-absorption Activated Carbon filter',
-      'Removes fine dust, PM2.5 particles, vehicle smog, pet dander, pollen, smoke & unpleasant odors',
-      'Eliminates airborne bacteria, harmful germs, and virus-carrying aerosols',
-      'Ultra energy-efficient 45W pure copper motor (220–240V, 50Hz) suitable for continuous 24/7 run',
-      'Smart electronic touch control with 360° air quality ring indicator & ambient light sensor',
-      'Whisper-quiet sleep operation (noise level from 32 dB(A) up to 64.5 dB(A) max turbo)',
-      'Sleek modern cylindrical tower aesthetic (280 × 280 × 630 mm, Net Weight: 6.3 kg)',
-    ],
-    idealFor:
-      'Residential living rooms, master bedrooms, executive cabins, private clinics, conference halls & reception lounges',
-    specSummary: 'Available in Different Sizes · 450 m³/h CADR · True HEPA & Carbon · 45W · Quiet 64.5 dB(A)',
-  },
-
-  // 3. Third: Residential Air Conditioning Solutions
+  // 2. Second: Residential Air Conditioning Solutions
   {
     id: 'residential-split-ac',
     name: 'Wall-Mounted Split AC (Inverter & Normal)',
@@ -132,7 +106,7 @@ export const products: Product[] = [
     specSummary: '1.0T – 2.0T · Inverter & Normal · R32 / R410A · Whisper Quiet',
   },
 
-  // 4. Fourth: Commercial Air Conditioning Solutions
+  // 3. Third: Commercial Air Conditioning Solutions
   {
     id: 'commercial-vrf-system',
     name: 'VRF / VRV Air Conditioning (4 HP Mini VRF to Commercial)',
@@ -197,6 +171,32 @@ export const products: Product[] = [
     idealFor:
       'Cold storage facilities, supermarkets, hotels, restaurants, dairy, pharmaceuticals & food processing',
     specSummary: 'Chiller (+2° to +8°C) · Freezer (-18° to -25°C) · PUF Panels · Digital Controller',
+  },
+
+  // 5. Fifth: Air Purifiers (Clean Air & HEPA Solutions)
+  {
+    id: 'hepa-air-purifier',
+    name: 'Smart HEPA Air Purifier (Home & Commercial)',
+    category: 'Air Purifiers',
+    label: 'TRUE HEPA & ACTIVATED CARBON',
+    image: '/images/hepa-air-purifier.jpg',
+    imageClass: 'air-purifier-img',
+    description:
+      'High-performance indoor air purification system engineered to eliminate airborne dust, pollutants, allergens, and harmful germs. Featuring True HEPA + Activated Carbon filtration with 450 m³/h Clean Air Delivery Rate (CADR). Available in different sizes to match diverse room volumes and spaces across homes and executive offices.',
+    features: [
+      'Available in multiple room sizes and capacities tailored for residential & commercial spaces',
+      'High Clean Air Delivery Rate: CADR 450 m³/h for rapid whole-room air circulation',
+      'Dual multi-stage filtration: Medical-grade True HEPA + High-absorption Activated Carbon filter',
+      'Removes fine dust, PM2.5 particles, vehicle smog, pet dander, pollen, smoke & unpleasant odors',
+      'Eliminates airborne bacteria, harmful germs, and virus-carrying aerosols',
+      'Ultra energy-efficient 45W pure copper motor (220–240V, 50Hz) suitable for continuous 24/7 run',
+      'Smart electronic touch control with 360° air quality ring indicator & ambient light sensor',
+      'Whisper-quiet sleep operation (noise level from 32 dB(A) up to 64.5 dB(A) max turbo)',
+      'Sleek modern cylindrical tower aesthetic (280 × 280 × 630 mm, Net Weight: 6.3 kg)',
+    ],
+    idealFor:
+      'Residential living rooms, master bedrooms, executive cabins, private clinics, conference halls & reception lounges',
+    specSummary: 'Available in Different Sizes · 450 m³/h CADR · True HEPA & Carbon · 45W · Quiet 64.5 dB(A)',
   },
 ];
 

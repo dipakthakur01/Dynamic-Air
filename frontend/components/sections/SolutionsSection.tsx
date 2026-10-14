@@ -30,16 +30,16 @@ export default function SolutionsSection({
         <div className="section-heading" data-reveal>
           <div>
             <div className="section-eyebrow">
-              <span className="square-bullet" /> AIR CURTAINS, PURIFIERS, HVAC &amp; COLD STORAGE
+              <span className="square-bullet" /> AIR CURTAINS, HVAC, COLD STORAGE &amp; PURIFIERS
             </div>
             <h2>
-              Engineered air barriers &amp; purifiers.
-              <br /> <span className="muted-text">Precision climate &amp; cold storage.</span>
+              Engineered air barriers &amp; cooling.
+              <br /> <span className="muted-text">Precision climate, cold storage &amp; clean air.</span>
             </h2>
           </div>
           <p>
-            Explore Climix air curtains, smart HEPA air purifiers, residential split ACs,
-            <br className="desktop-only" /> VRF systems (4 HP Mini to commercial), and modular cold rooms.
+            Explore Climix air curtains, residential split ACs, VRF systems (4 HP Mini to commercial),
+            <br className="desktop-only" /> modular cold rooms, and smart HEPA air purifiers.
           </p>
         </div>
 
