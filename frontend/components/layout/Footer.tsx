@@ -111,7 +111,7 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
                 rel="noopener noreferrer"
                 className="footer-contact-link"
               >
-                <MessageSquare size={14} /> WhatsApp: {business.phone}
+                <MessageSquare size={14} /> WhatsApp: {business.whatsapp.replace(/^977/, '')}
               </a>
             )}
             {business.email && (

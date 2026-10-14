@@ -4,10 +4,10 @@ export const business: BusinessConfig = {
   name: 'Dynamic Air Solutions Pvt. Ltd.',
   tagline: 'Complete Air Conditioning Solution',
   domain: 'https://dynamicair.com.np',
-  email: 'sdynamicair@gmail.com',
+  email: '',
   phone: '9851123725',
   phone2: '9715023725',
-  whatsapp: '9779851123725', // International format for WhatsApp API: 977 9851123725
+  whatsapp: '9779715023725', // International format for WhatsApp API: 977 9715023725
   address: 'Kathmandu, Nepal',
   mapsUrl: '',
   openingHours: 'Sun – Fri: 9:00 AM – 6:30 PM',
@@ -155,7 +155,7 @@ export const products: Product[] = [
     name: 'Modular Cold Room Storage Solutions',
     category: 'Cold Room Solutions',
     label: 'CHILLER & FREEZER TEMPERATURE',
-    image: '/images/modular-cold-room.jpg',
+    image: '/images/cold-room.jpeg',
     description:
       'Prefabricated modular cold rooms engineered for commercial preservation and storage. Built with high-density polyurethane (PUF) insulated sandwich panels and available in both Chiller and Freezer temperature configurations.',
     features: [
@@ -185,6 +185,10 @@ export const services: Service[] = [
       'Reinforced baseplate vibration-free wall mounting',
       'Dual-speed air balance calibration and remote control handover',
     ],
+    image: '/images/service-air-curtain.jpeg',
+    imageAlt: 'Climix Q Series cross-flow air curtain installed over commercial glass doorway',
+    badgeLabel: 'AUTHORIZED CLIMIX PARTNER',
+    tagline: 'Precision doorway airflow & hygiene barrier.',
   },
   {
     number: '02',
@@ -198,6 +202,10 @@ export const services: Service[] = [
       'Genuine brand warranty and transparent quotation',
       'Prompt delivery and site readiness inspection across Kathmandu',
     ],
+    image: '/images/service-ac-assessment.jpeg',
+    imageAlt: 'Modern inverter AC outdoor condenser units professionally installed on building exterior',
+    badgeLabel: 'HEAT-LOAD CALCULATION & SIZING',
+    tagline: 'Maximized cooling & reduced energy consumption.',
   },
   {
     number: '03',
@@ -211,6 +219,10 @@ export const services: Service[] = [
       'Vacuum pump evacuation before refrigerant release',
       'Airflow balance check and anti-vibration outdoor mounting',
     ],
+    image: '/images/service-hvac-piping.jpeg',
+    imageAlt: 'Professional HVAC copper piping installation, vacuum pump, and precision manifold equipment',
+    badgeLabel: 'CERTIFIED HVAC ENGINEERING',
+    tagline: 'Pure copper piping & deep vacuum testing.',
   },
   {
     number: '04',
@@ -224,6 +236,10 @@ export const services: Service[] = [
       'Digital manifold pressure check and gas leak rectification',
       'Annual maintenance contracts (AMC) for homes & businesses',
     ],
+    image: '/images/service-repair-amc.jpeg',
+    imageAlt: 'Certified technician performing AC refrigerant gas charging and outdoor unit diagnostics',
+    badgeLabel: 'DIAGNOSTICS & LIFELONG AMC CARE',
+    tagline: 'Precision gas charging & peak cooling reliability.',
   },
 ];
 
@@ -241,7 +257,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'How can I contact Dynamic Air Solutions Pvt. Ltd. for enquiries?',
     answer:
-      'You can call or WhatsApp us directly at 9851123725 / 9715023725, email us at sdynamicair@gmail.com, or use the interactive enquiry form on this website to prepare and send your specifications.',
+      'You can call or WhatsApp us directly at 9851123725 / 9715023725, or use the interactive enquiry form on this website to prepare and send your specifications directly to our engineering team.',
   },
   {
     question: 'Do you provide on-site installation and maintenance in Kathmandu?',

@@ -59,7 +59,9 @@ export default function FaqSection({
                 </button>
               </h3>
               <div id={`faq-${index}`} hidden={faqOpen !== index}>
-                <p className="faq-answer">{item.answer}</p>
+                <p className="faq-answer" suppressHydrationWarning>
+                  {item.answer}
+                </p>
               </div>
             </article>
           ))}

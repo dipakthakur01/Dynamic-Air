@@ -223,7 +223,7 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
                   className="solution-hero-img"
                 />
                 <div className="solution-image-caption-bar">
-                  <span>Authorized Climix Nepal Deployment Specification</span>
+                  <span>{selectedProduct.name}</span>
                 </div>
               </div>
             </div>

@@ -1,8 +1,22 @@
 'use client';
 
-import React, { type FormEvent } from 'react';
-import { X, Plus, Copy, Download, Mail, MessageCircle } from 'lucide-react';
+import React, { useState, type FormEvent } from 'react';
+import {
+  X,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Copy,
+  Download,
+  MessageCircle,
+  Loader2,
+  RefreshCw,
+  ExternalLink,
+} from 'lucide-react';
 import type { BusinessConfig } from '@/types';
+
+// Internal destination email for inquiries (kept private from the public page)
+const INQUIRY_MAIL_TARGET = 'thakurrrn132@gmail.com';
 
 interface EnquiryModalProps {
   dialogRef: React.RefObject<HTMLDialogElement | null>;
@@ -27,45 +41,17 @@ export default function EnquiryModal({
   setNotice,
   business,
 }: EnquiryModalProps) {
-  const buildDraft = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    setDraft(
-      `Hello Dynamic Air,\n\nI would like to enquire about ${data.get(
-        'interest'
-      )}.\n\nName: ${String(data.get('name')).trim()}\nContact: ${String(
-        data.get('contact')
-      ).trim()}\nLocation: ${
-        String(data.get('location')).trim() || 'To be discussed'
-      }\n\nRequirements:\n${String(
-        data.get('message')
-      ).trim()}\n\nPlease share availability, suitable options and a quotation. Thank you.`
-    );
-    setNotice('Your enquiry is ready. It has not been sent.');
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'fallback'>('idle');
+  const [submittedData, setSubmittedData] = useState<{
+    name: string;
+    contact: string;
+    interest: string;
+    location: string;
+    message: string;
+  } | null>(null);
 
-  const copyDraft = async () => {
-    try {
-      await navigator.clipboard.writeText(draft);
-      setNotice('Enquiry copied. You can now share it with Dynamic Air.');
-    } catch {
-      setNotice(
-        'Copy is unavailable here. Select the text below or download your enquiry.'
-      );
-    }
-  };
-
-  const downloadDraft = () => {
-    const url = URL.createObjectURL(
-      new Blob([draft], { type: 'text/plain;charset=utf-8' })
-    );
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Dynamic-Air-Enquiry.txt';
-    link.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    setNotice('Enquiry downloaded. No message has been sent.');
-  };
+  const targetWhatsapp = business.whatsapp || '9779715023725';
 
   const interestOptions = Array.from(
     new Set([
@@ -81,6 +67,121 @@ export default function EnquiryModal({
       'General enquiry',
     ])
   );
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setNotice('');
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const contact = String(data.get('contact') || '').trim();
+    const selectedInterest = String(data.get('interest') || interest).trim();
+    const location = String(data.get('location') || '').trim() || 'Kathmandu, Nepal';
+    const message = String(data.get('message') || '').trim();
+
+    const formattedDraft = `Hello Dynamic Air Solutions,
+
+I would like to enquire about: ${selectedInterest}
+
+Client Name: ${name}
+Contact: ${contact}
+Location: ${location}
+
+Requirements & Project Scope:
+${message}
+
+Please share equipment availability, on-site assessment schedule, and quotation.`;
+
+    setDraft(formattedDraft);
+    setSubmittedData({
+      name,
+      contact,
+      interest: selectedInterest,
+      location,
+      message,
+    });
+
+    const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(formattedDraft)}`;
+
+    // Try opening WhatsApp in a new tab upon submit user gesture
+    if (typeof window !== 'undefined') {
+      try {
+        window.open(whatsappUrl, '_blank');
+      } catch {
+        // Pop-up blocker; user will use the prominent WhatsApp button shown below
+      }
+    }
+
+    // Direct auto-send to email behind the scenes
+    const payload = {
+      name,
+      contact,
+      interest: selectedInterest,
+      location,
+      message,
+      _subject: `New Website Enquiry: ${selectedInterest} - ${name}`,
+      _template: 'table',
+      _captcha: 'false',
+    };
+
+    try {
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(INQUIRY_MAIL_TARGET)}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setNotice('Enquiry auto-sent to our team! Use the WhatsApp option below for instant real-time chat.');
+      } else {
+        setSubmitStatus('fallback');
+        setNotice('Direct transmission could not be confirmed. Please send via WhatsApp below.');
+      }
+    } catch {
+      // Offline, adblocker, or network interruption
+      setSubmitStatus('fallback');
+      setNotice('Network connection was interrupted. Please send directly via WhatsApp below.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const copyDraft = async () => {
+    try {
+      await navigator.clipboard.writeText(draft);
+      setNotice('Enquiry copied to clipboard. You can paste it into WhatsApp.');
+    } catch {
+      setNotice('Copy is unavailable. Please select and copy the text below.');
+    }
+  };
+
+  const downloadDraft = () => {
+    const url = URL.createObjectURL(
+      new Blob([draft], { type: 'text/plain;charset=utf-8' })
+    );
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `Dynamic-Air-Enquiry-${Date.now()}.txt`;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setNotice('Enquiry file downloaded.');
+  };
+
+  const handleReset = () => {
+    setDraft('');
+    setNotice('');
+    setSubmitStatus('idle');
+    setSubmittedData(null);
+  };
 
   return (
     <dialog
@@ -110,10 +211,12 @@ export default function EnquiryModal({
             <br />
             help you with?
           </h2>
-          <p>Prepare your requirements to share with Dynamic Air.</p>
+          <p>
+            Submit your requirements directly to our engineering team for on-site assessment and quotation.
+          </p>
 
           {!draft ? (
-            <form onSubmit={buildDraft} className="enquiry-form">
+            <form onSubmit={handleSubmit} className="enquiry-form">
               <div className="form-row">
                 <label>
                   Your name <span>*</span>
@@ -127,14 +230,14 @@ export default function EnquiryModal({
                   />
                 </label>
                 <label>
-                  Phone or email <span>*</span>
+                  Phone or contact <span>*</span>
                   <input
                     name="contact"
                     required
                     minLength={5}
                     maxLength={150}
-                    autoComplete="email"
-                    placeholder="How we can reach you"
+                    autoComplete="tel"
+                    placeholder="e.g. 98XXXXXXXX"
                   />
                 </label>
               </div>
@@ -158,7 +261,7 @@ export default function EnquiryModal({
                     name="location"
                     maxLength={150}
                     autoComplete="address-level2"
-                    placeholder="City or area"
+                    placeholder="City or area (e.g. Kathmandu)"
                   />
                 </label>
               </div>
@@ -171,84 +274,126 @@ export default function EnquiryModal({
                   minLength={10}
                   maxLength={2000}
                   rows={4}
-                  placeholder="Your space, equipment or service needs…"
+                  placeholder="Your space, doorway width, equipment specifications or service needs…"
                 />
               </label>
 
               <p className="form-disclosure">
-                Your details stay in this page. Creating an enquiry does not send
-                a message or confirm a booking.
+                Submissions are auto-sent directly to our engineering team and can immediately be sent to WhatsApp below.
               </p>
 
-              <button type="submit" className="button button-dark full-width">
-                Create my enquiry <Plus size={17} />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="button button-dark full-width enquiry-submit-btn"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 size={17} className="spin" />
+                    Auto-sending enquiry to engineering team…
+                  </>
+                ) : (
+                  <>
+                    Submit Enquiry (Auto-Send to Team) <Send size={16} />
+                  </>
+                )}
               </button>
             </form>
           ) : (
             <div className="enquiry-result">
-              <label htmlFor="enquiry-text" className="result-label">
-                Your enquiry
-              </label>
-              <textarea
-                id="enquiry-text"
-                value={draft}
-                onChange={(event) => setDraft(event.target.value)}
-                rows={9}
-              />
+              {/* 1. AUTO SEND STATUS */}
+              <div className={`enquiry-status-card ${submitStatus === 'success' ? 'status-success' : 'status-fallback'}`}>
+                <div className="enquiry-status-header">
+                  {submitStatus === 'success' ? (
+                    <>
+                      <CheckCircle2 size={20} />
+                      <span>Enquiry Auto-Sent Successfully!</span>
+                    </>
+                  ) : (
+                    <>
+                      <AlertCircle size={20} />
+                      <span>Enquiry Prepared for WhatsApp</span>
+                    </>
+                  )}
+                </div>
+                <p className="enquiry-status-text">
+                  {submitStatus === 'success' ? (
+                    <>
+                      Thank you, <strong>{submittedData?.name}</strong>. Your enquiry regarding{' '}
+                      <strong>{submittedData?.interest}</strong> has been auto-sent to our engineering department.
+                    </>
+                  ) : (
+                    <>
+                      Your enquiry is ready. Direct dispatch target: Dynamic Air Engineering Team.
+                    </>
+                  )}
+                </p>
+                {submittedData?.contact && (
+                  <p className="enquiry-status-text" style={{ marginTop: '5px' }}>
+                    Contact on file: <strong>{submittedData.contact}</strong>
+                  </p>
+                )}
+              </div>
+
+              {/* 2. THEN BELOW SHOW FOR CURRENT SENDING TO WHATSAPP */}
+              <div className="enquiry-whatsapp-card">
+                <div className="whatsapp-card-badge">
+                  <MessageCircle size={15} />
+                  <span>CURRENT SENDING TO WHATSAPP</span>
+                </div>
+                <h3 className="whatsapp-card-title">
+                  Send Current Enquiry to WhatsApp
+                </h3>
+                <p className="whatsapp-card-desc">
+                  Chat directly with our technician on WhatsApp (<strong>+977 9715023725</strong>) for instant quotations and equipment recommendation.
+                </p>
+                <a
+                  href={`https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(draft)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-whatsapp whatsapp-direct-send-btn"
+                >
+                  <MessageCircle size={19} />
+                  <span>Send Current Enquiry to WhatsApp (+977 9715023725)</span>
+                  <ExternalLink size={15} />
+                </a>
+              </div>
+
+              {/* 3. CURRENT ENQUIRY SUMMARY */}
+              <div className="enquiry-summary-preview">
+                <div className="preview-label-row">
+                  <span className="result-label">Current Enquiry Details</span>
+                  <span className="recipient-pill">Status: Auto-Dispatched</span>
+                </div>
+                <textarea
+                  id="enquiry-text"
+                  value={draft}
+                  onChange={(event) => setDraft(event.target.value)}
+                  rows={6}
+                />
+              </div>
+
+              {/* 4. ACTIONS: WhatsApp, clipboard, download, reset */}
               <div className="result-buttons">
                 <button className="button button-dark" onClick={copyDraft}>
                   <Copy size={16} />
-                  Copy enquiry
+                  Copy
                 </button>
                 <button
                   className="button button-outline"
                   onClick={downloadDraft}
                 >
                   <Download size={16} />
-                  Download
+                  Download (.txt)
                 </button>
               </div>
 
-              {business.email && (
-                <a
-                  className="button button-dark full-width"
-                  href={`mailto:${business.email}?subject=${encodeURIComponent(
-                    'Dynamic Air enquiry: ' + interest
-                  )}&body=${encodeURIComponent(draft)}`}
-                >
-                  <Mail size={17} />
-                  Open email
-                </a>
-              )}
-
-              {business.whatsapp && (
-                <a
-                  className="button button-dark full-width"
-                  href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(
-                    draft
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle size={17} />
-                  Open WhatsApp
-                </a>
-              )}
-
-              <p className="form-disclosure">
-                Share this enquiry through your usual contact with Dynamic Air.
-                Nothing is sent automatically.
-              </p>
-
-              <button
-                className="edit-enquiry"
-                onClick={() => {
-                  setDraft('');
-                  setNotice('');
-                }}
-              >
-                Start another enquiry
-              </button>
+              <div className="enquiry-footer-actions">
+                <button className="edit-enquiry" onClick={handleReset}>
+                  <RefreshCw size={13} style={{ marginRight: '5px' }} />
+                  Submit another enquiry
+                </button>
+              </div>
             </div>
           )}
 

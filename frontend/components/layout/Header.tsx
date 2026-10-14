@@ -107,26 +107,26 @@ export default function Header({
         <div className="header-inner">
           {/* Brand Logo */}
           <a
-            className="brand"
+            className="brand header-brand"
             href="#home"
             aria-label="Dynamic Air Solutions Pvt. Ltd. home"
             onClick={() => setMenuOpen(false)}
           >
-            <div className="header-brand-badge">
+            <div className="header-logo-wrap">
               <div className="brand-emblem-rotator" aria-hidden="true">
                 <img
                   src="/images/emblem-rotating.png"
                   alt="Dynamic Air rotating emblem"
-                  width={44}
-                  height={44}
+                  width={46}
+                  height={46}
                   className="brand-emblem-img"
                 />
               </div>
               <img
                 src="/images/dynamic-air-text.png"
-                alt="Dynamic Air Solutions Pvt. Ltd. - Complete Air Conditioning Solution"
-                width={175}
-                height={44}
+                alt={business.name}
+                width={195}
+                height={46}
                 className="brand-logo-text"
               />
             </div>

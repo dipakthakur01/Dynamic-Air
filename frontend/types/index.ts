@@ -26,6 +26,10 @@ export interface Service {
   short: string;
   description: string;
   points: string[];
+  image?: string;
+  imageAlt?: string;
+  badgeLabel?: string;
+  tagline?: string;
 }
 
 export interface FaqItem {

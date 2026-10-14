@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dynamicair.com.np'),
   title: 'Dynamic Air Solutions Pvt. Ltd. | Climix Air Curtains, HVAC & Cold Rooms Nepal',
   description:
-    'Dynamic Air Solutions Pvt. Ltd. – Authorized Climix Q Series Cross Flow Air Curtains, Residential Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Professional HVAC Installation & AMC in Kathmandu, Nepal. Contact: 9851123725 / 9715023725 | sdynamicair@gmail.com.',
+    'Dynamic Air Solutions Pvt. Ltd. – Authorized Climix Q Series Cross Flow Air Curtains, Residential Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Professional HVAC Installation & AMC in Kathmandu, Nepal. Contact: 9851123725 / 9715023725.',
   manifest: '/manifest.json',
   alternates: { canonical: '/' },
   icons: {
@@ -63,23 +64,17 @@ export default function RootLayout({
         <meta name="google-site-verification" content="e2fa6752e72140d2" />
         <link rel="apple-touch-icon" href="/images/logo-round.png" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <script
+      </head>
+      <body>
+        <Script
+          id="theme-initializer"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var saved = localStorage.getItem('dynamic_air_theme');
-                  var theme = saved || 'light';
-                  document.documentElement.setAttribute('data-theme', theme);
-                } catch(e) {
-                  document.documentElement.setAttribute('data-theme', 'light');
-                }
-              })();
-            `,
+            __html: `(function(){try{var t=localStorage.getItem('dynamic_air_theme');if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
           }}
         />
-      </head>
-      <body>{children}</body>
+        {children}
+      </body>
     </html>
   );
 }
