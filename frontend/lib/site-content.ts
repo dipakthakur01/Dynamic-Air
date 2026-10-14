@@ -4,7 +4,7 @@ export const business: BusinessConfig = {
   name: 'Dynamic Air Solutions Pvt. Ltd.',
   tagline: 'Complete Air Conditioning Solution',
   domain: 'https://dynamicair.com.np',
-  email: '',
+  email: 'sdynamicair@gmail.com',
   phone: '9851123725',
   phone2: '9715023725',
   whatsapp: '9779715023725', // International format for WhatsApp API: 977 9715023725
@@ -84,7 +84,33 @@ export const products: Product[] = [
     specSummary: 'Up to 4.5m Doorway Height · 18–20 m/s Air Velocity · Heavy-Duty Motor',
   },
 
-  // 2. Second: Residential Air Conditioning Solutions
+  // 2. Second: Air Purifiers (Clean Air & HEPA Solutions)
+  {
+    id: 'hepa-air-purifier',
+    name: 'Smart HEPA Air Purifier (Home & Commercial)',
+    category: 'Air Purifiers',
+    label: 'TRUE HEPA & ACTIVATED CARBON',
+    image: '/images/hepa-air-purifier.jpg',
+    imageClass: 'air-purifier-img',
+    description:
+      'High-performance indoor air purification system engineered to eliminate airborne dust, pollutants, allergens, and harmful germs. Featuring True HEPA + Activated Carbon filtration with 450 m³/h Clean Air Delivery Rate (CADR). Available in different sizes to match diverse room volumes and spaces across homes and executive offices.',
+    features: [
+      'Available in multiple room sizes and capacities tailored for residential & commercial spaces',
+      'High Clean Air Delivery Rate: CADR 450 m³/h for rapid whole-room air circulation',
+      'Dual multi-stage filtration: Medical-grade True HEPA + High-absorption Activated Carbon filter',
+      'Removes fine dust, PM2.5 particles, vehicle smog, pet dander, pollen, smoke & unpleasant odors',
+      'Eliminates airborne bacteria, harmful germs, and virus-carrying aerosols',
+      'Ultra energy-efficient 45W pure copper motor (220–240V, 50Hz) suitable for continuous 24/7 run',
+      'Smart electronic touch control with 360° air quality ring indicator & ambient light sensor',
+      'Whisper-quiet sleep operation (noise level from 32 dB(A) up to 64.5 dB(A) max turbo)',
+      'Sleek modern cylindrical tower aesthetic (280 × 280 × 630 mm, Net Weight: 6.3 kg)',
+    ],
+    idealFor:
+      'Residential living rooms, master bedrooms, executive cabins, private clinics, conference halls & reception lounges',
+    specSummary: 'Available in Different Sizes · 450 m³/h CADR · True HEPA & Carbon · 45W · Quiet 64.5 dB(A)',
+  },
+
+  // 3. Third: Residential Air Conditioning Solutions
   {
     id: 'residential-split-ac',
     name: 'Wall-Mounted Split AC (Inverter & Normal)',
@@ -106,26 +132,28 @@ export const products: Product[] = [
     specSummary: '1.0T – 2.0T · Inverter & Normal · R32 / R410A · Whisper Quiet',
   },
 
-  // 3. Third: Commercial Air Conditioning Solutions
+  // 4. Fourth: Commercial Air Conditioning Solutions
   {
     id: 'commercial-vrf-system',
-    name: 'Commercial VRF / VRV Air Conditioning (100% Inverter)',
+    name: 'VRF / VRV Air Conditioning (4 HP Mini VRF to Commercial)',
     category: 'Commercial Air Conditioning',
-    label: '100% INVERTER COMMERCIAL HVAC',
+    label: '4 HP MINI VRF TO LARGE COMMERCIAL HVAC',
     image: '/images/commercial-vrf-system.jpg',
     description:
-      'High-capacity commercial VRF (Variable Refrigerant Flow) systems powered by 100% Inverter technology. Connects heavy-duty outdoor rooftop condenser banks to multiple indoor ceiling cassette and duct units with independent zone climate control.',
+      'Comprehensive 100% Inverter VRF / VRV (Variable Refrigerant Flow) systems spanning from 4 HP Residential Mini VRF for luxury villas, apartments, and duplexes up to high-capacity modular commercial HVAC banks (up to 96+ HP). Connects heavy-duty outdoor rooftop condenser units to multiple indoor ceiling cassette, duct, and wall units with individual zone climate control.',
     features: [
-      '100% Inverter compressor engineering: modulates power precisely to actual cooling demand',
-      'Commercial outdoor rooftop multi-unit banks serving up to 64+ independent indoor spaces',
-      'Extreme partial-load energy efficiency: cuts commercial electricity overhead up to 45%',
-      'Extended refrigerant piping length and height allowances for multi-story buildings',
-      'Intelligent central touch controllers and Building Management System (BMS) compatibility',
-      'Complete HVAC engineering: load calculation, copper piping layout, and scheduled servicing',
+      'Full capacity range: 4 HP Residential Mini VRF up to 96+ HP large commercial modular VRF systems',
+      'Residential Mini VRF (from 4 HP): compact footprint and whisper-quiet outdoor operation tailored for villas and duplex residences',
+      'Large Commercial VRF: multi-unit banks serving up to 64+ independent indoor spaces across multi-story buildings',
+      '100% Inverter compressor engineering: modulates power precisely to real-time cooling and heating demand',
+      'Extreme partial-load energy efficiency: cuts commercial electricity overhead by up to 45%',
+      'Extended refrigerant piping length and generous elevation allowance for residential villas and tall commercial towers',
+      'Intelligent central touch controllers, smart thermostat integration, and Building Management System (BMS) compatibility',
+      'Complete turnkey HVAC engineering: on-site BTU load assessment, copper piping layout, nitrogen pressure testing & AMC servicing',
     ],
     idealFor:
-      'Luxury residences, commercial complexes, corporate offices, hotels, hospitals, bank branches & institutions',
-    specSummary: '100% Inverter · 8 HP to 96+ HP · Multi-Zone VRF · BMS Integration',
+      'Residential duplexes, luxury villas, commercial towers, corporate offices, hotels, hospitals, bank branches & institutions',
+    specSummary: '4 HP (Mini VRF) to 96+ HP Commercial · 100% Inverter · Multi-Zone VRF · BMS Integration',
   },
   {
     id: 'ceiling-cassette-ac',
@@ -257,7 +285,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'How can I contact Dynamic Air Solutions Pvt. Ltd. for enquiries?',
     answer:
-      'You can call or WhatsApp us directly at 9851123725 / 9715023725, or use the interactive enquiry form on this website to prepare and send your specifications directly to our engineering team.',
+      'You can call or WhatsApp us directly at 9851123725 / 9715023725, email us at sdynamicair@gmail.com, or use the interactive enquiry form on this website to prepare and send your specifications directly to our engineering team.',
   },
   {
     question: 'Do you provide on-site installation and maintenance in Kathmandu?',

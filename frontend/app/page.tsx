@@ -63,6 +63,7 @@ const slides: HeroSlide[] = [
 const categories: Category[] = [
   'All solutions',
   'Climix Air Curtains',
+  'Air Purifiers',
   'Residential Air Conditioning',
   'Commercial Air Conditioning',
   'Cold Room Solutions',
@@ -102,13 +103,34 @@ export default function Home() {
     };
     window.addEventListener('beforeinstallprompt', handleBeforeInstall);
 
-    // Register PWA service worker
+    // PWA Service Worker: only register in production on live domains
+    // On localhost / development, proactively unregister and clear stale caches to ensure seamless HMR without hydration mismatches
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch((err) => {
-          console.warn('[PWA] SW register warning:', err);
+      const isLocalhost =
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.hostname.endsWith('.local');
+
+      if (process.env.NODE_ENV !== 'production' || isLocalhost) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (const registration of registrations) {
+            registration.unregister();
+          }
         });
-      });
+        if ('caches' in window) {
+          caches.keys().then((keys) => {
+            for (const key of keys) {
+              caches.delete(key);
+            }
+          });
+        }
+      } else {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch((err) => {
+            console.warn('[PWA] SW register warning:', err);
+          });
+        });
+      }
     }
 
     return () => {

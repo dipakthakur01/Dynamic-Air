@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -64,15 +63,13 @@ export default function RootLayout({
         <meta name="google-site-verification" content="e2fa6752e72140d2" />
         <link rel="apple-touch-icon" href="/images/logo-round.png" />
         <meta name="mobile-web-app-capable" content="yes" />
-      </head>
-      <body>
-        <Script
-          id="theme-initializer"
-          strategy="beforeInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('dynamic_air_theme');if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
           }}
         />
+      </head>
+      <body>
         {children}
       </body>
     </html>

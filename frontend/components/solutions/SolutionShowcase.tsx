@@ -21,6 +21,7 @@ import type { Product, Category } from '@/types';
 import { business, products } from '@/lib/site-content';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import MobileBottomNav from '@/components/layout/MobileBottomNav';
 import EnquiryModal from '@/components/modals/EnquiryModal';
 
 interface SolutionShowcaseProps {
@@ -220,7 +221,7 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
                   alt={selectedProduct.name}
                   width={800}
                   height={600}
-                  className="solution-hero-img"
+                  className={`solution-hero-img ${selectedProduct.imageClass || ''}`.trim()}
                 />
                 <div className="solution-image-caption-bar">
                   <span>{selectedProduct.name}</span>
@@ -370,6 +371,12 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
       </main>
 
       <Footer business={business} onOpenEnquiry={() => handleOpenEnquiry(selectedProduct.name)} />
+
+      <MobileBottomNav
+        menuOpen={menuOpen}
+        onToggleMenu={() => setMenuOpen((prev) => !prev)}
+        onOpenEnquiry={() => handleOpenEnquiry(selectedProduct.name)}
+      />
 
       <EnquiryModal
         dialogRef={dialogRef}

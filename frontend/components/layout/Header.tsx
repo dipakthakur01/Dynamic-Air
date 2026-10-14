@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import {
   Menu,
   X,
@@ -106,13 +107,13 @@ export default function Header({
       <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
         <div className="header-inner">
           {/* Brand Logo */}
-          <a
+          <Link
             className="brand header-brand"
-            href="#home"
+            href="/#home"
             aria-label="Dynamic Air Solutions Pvt. Ltd. home"
             onClick={() => setMenuOpen(false)}
           >
-            <div className="header-logo-wrap">
+            <div className="header-logo-wrap" suppressHydrationWarning>
               <div className="brand-emblem-rotator" aria-hidden="true">
                 <img
                   src="/images/emblem-rotating.png"
@@ -127,17 +128,24 @@ export default function Header({
                 alt={business.name}
                 width={195}
                 height={46}
-                className="brand-logo-text"
+                className="brand-logo-text brand-logo-text-light"
+              />
+              <img
+                src="/images/dynamic-air-text-dark.png"
+                alt={business.name}
+                width={195}
+                height={46}
+                className="brand-logo-text brand-logo-text-dark"
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Quick Nav */}
           <nav className="desktop-nav" aria-label="Main navigation">
-            <a href="#solutions">Solutions</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <Link href="/#solutions">Solutions</Link>
+            <Link href="/#services">Services</Link>
+            <Link href="/#about">About</Link>
+            <Link href="/#contact">Contact</Link>
           </nav>
 
           {/* Header Actions */}
@@ -260,9 +268,9 @@ export default function Header({
           <nav className="drawer-nav-list" aria-label="Detailed sections">
             <span className="drawer-nav-caption">SECTIONS &amp; PAGES</span>
             {detailedNavLinks.map(({ num, label, id, desc }) => (
-              <a
+              <Link
                 key={id}
-                href={`#${id}`}
+                href={`/#${id}`}
                 className="drawer-nav-item"
                 onClick={() => setMenuOpen(false)}
               >
@@ -272,7 +280,7 @@ export default function Header({
                   <span className="drawer-item-desc">{desc}</span>
                 </span>
                 <ChevronRight size={16} className="drawer-item-arrow" />
-              </a>
+              </Link>
             ))}
           </nav>
 

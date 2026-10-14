@@ -60,8 +60,9 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
           <nav aria-label="Footer solutions">
             <span>SOLUTIONS &amp; PRODUCTS</span>
             <a href="#solutions">Climix Air Curtains</a>
+            <a href="#solutions">Smart HEPA Air Purifiers</a>
             <a href="#solutions">Residential Split AC</a>
-            <a href="#solutions">Commercial VRF &amp; Cassette</a>
+            <a href="#solutions">VRF Systems (4 HP Mini to Commercial)</a>
             <a href="#solutions">Modular Cold Rooms</a>
             <a href="/docs/climix-air-curtain-catalog.pdf" target="_blank" rel="noopener noreferrer">
               Download Climix Catalog (PDF)

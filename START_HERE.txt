@@ -10,8 +10,8 @@ Intended domain: https://dynamicair.com.np
 Business Contact:
 - Phone: 9851123725 / 9715023725
 - WhatsApp: 9715023725 (+977 9715023725)
-- Email: thakurrrn132@gmail.com
-- Products: Climix Q Series Air Curtains, Inverter Split ACs, Commercial VRF HVAC
+- Email: sdynamicair@gmail.com
+- Products: Climix Q Series Air Curtains, Smart HEPA Air Purifiers, Inverter Split ACs, VRF Systems (4 HP Mini to Commercial), Modular Cold Rooms
 - Social Media: Facebook, Instagram, TikTok
 
 For development and customization, see frontend/README.md.

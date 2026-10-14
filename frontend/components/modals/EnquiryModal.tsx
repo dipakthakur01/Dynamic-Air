@@ -15,8 +15,8 @@ import {
 } from 'lucide-react';
 import type { BusinessConfig } from '@/types';
 
-// Internal destination email for inquiries (kept private from the public page)
-const INQUIRY_MAIL_TARGET = 'thakurrrn132@gmail.com';
+// Internal destination email for inquiries
+const DEFAULT_INQUIRY_MAIL = 'sdynamicair@gmail.com';
 
 interface EnquiryModalProps {
   dialogRef: React.RefObject<HTMLDialogElement | null>;
@@ -57,8 +57,9 @@ export default function EnquiryModal({
     new Set([
       interest,
       'Climix Q Series Air Curtain',
+      'Smart HEPA Air Purifier (Different Sizes)',
       'Residential Wall-Mounted Split AC',
-      'Commercial VRF System (100% Inverter)',
+      'VRF / VRV System (4 HP Mini VRF to Commercial)',
       '4-Way Ceiling Cassette AC',
       'Modular Cold Room (Chiller & Freezer)',
       'HVAC Installation & Copper Piping',
@@ -114,8 +115,9 @@ Please share equipment availability, on-site assessment schedule, and quotation.
       }
     }
 
-    // Direct auto-send to email behind the scenes
-    const payload = {
+    // Direct auto-send to email behind the scenes via FormSubmit
+    const targetEmail = business.email || DEFAULT_INQUIRY_MAIL;
+    const payload: Record<string, string> = {
       name,
       contact,
       interest: selectedInterest,
@@ -126,9 +128,13 @@ Please share equipment availability, on-site assessment schedule, and quotation.
       _captcha: 'false',
     };
 
+    if (contact.includes('@')) {
+      payload._replyto = contact;
+    }
+
     try {
       const response = await fetch(
-        `https://formsubmit.co/ajax/${encodeURIComponent(INQUIRY_MAIL_TARGET)}`,
+        `https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`,
         {
           method: 'POST',
           headers: {
@@ -139,9 +145,14 @@ Please share equipment availability, on-site assessment schedule, and quotation.
         }
       );
 
-      if (response.ok) {
+      const result = await response.json().catch(() => null);
+
+      if (response.ok && (result?.success === 'true' || result?.success === true)) {
         setSubmitStatus('success');
         setNotice('Enquiry auto-sent to our team! Use the WhatsApp option below for instant real-time chat.');
+      } else if (result?.message && result.message.toLowerCase().includes('activation')) {
+        setSubmitStatus('success');
+        setNotice(`Enquiry submitted! Please check ${targetEmail} (including Spam/Junk folder) to confirm the one-time FormSubmit activation.`);
       } else {
         setSubmitStatus('fallback');
         setNotice('Direct transmission could not be confirmed. Please send via WhatsApp below.');

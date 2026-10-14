@@ -36,9 +36,9 @@ For source edits, use `frontend/`, run `npm ci` then `npm run build`, and upload
 In `frontend/lib/site-content.ts`, verified contact details are configured:
 - Phone: `9851123725` / `9715023725`
 - WhatsApp: `9715023725` (+977 9715023725)
-- Email: `thakurrrn132@gmail.com`
+- Email: `sdynamicair@gmail.com`
 - Brand: Dynamic Air Solutions Pvt. Ltd.
-- Core Solutions: Climix Q Series Cross Flow Air Curtains, Inverter Split ACs, Commercial VRF HVAC
+- Core Solutions: Climix Q Series Cross Flow Air Curtains, Smart HEPA Air Purifiers, Inverter Split ACs, VRF Systems (4 HP Mini to Commercial HVAC), Modular Cold Rooms
 - Social Media: Facebook, Instagram, TikTok
 
 Visitors can directly call, chat on WhatsApp, send emails, or compose and download quotation enquiries.

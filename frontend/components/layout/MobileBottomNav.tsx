@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Home, Wind, Wrench, Send, Menu } from 'lucide-react';
 
 interface MobileBottomNavProps {
@@ -14,25 +16,37 @@ export default function MobileBottomNav({
   onToggleMenu,
   onOpenEnquiry,
 }: MobileBottomNavProps) {
+  const pathname = usePathname();
+  const isSolutionsActive = pathname?.startsWith('/solutions');
+  const isHomeActive = pathname === '/' && !menuOpen;
+
   return (
     <nav
       className="mobile-bottom-nav"
       aria-label="Mobile Bottom App Navigation"
     >
       <div className="mobile-bottom-nav-inner">
-        <a href="#home" className="mobile-nav-tab" aria-label="Home">
+        <Link
+          href="/#home"
+          className={`mobile-nav-tab ${isHomeActive && !isSolutionsActive ? 'is-active' : ''}`}
+          aria-label="Home"
+        >
           <span className="mobile-nav-icon">
             <Home size={20} />
           </span>
           <span className="mobile-nav-label">Home</span>
-        </a>
+        </Link>
 
-        <a href="#solutions" className="mobile-nav-tab" aria-label="Solutions">
+        <Link
+          href="/#solutions"
+          className={`mobile-nav-tab ${isSolutionsActive ? 'is-active' : ''}`}
+          aria-label="Solutions"
+        >
           <span className="mobile-nav-icon">
             <Wind size={20} />
           </span>
           <span className="mobile-nav-label">Solutions</span>
-        </a>
+        </Link>
 
         {/* Center Primary Action: Enquire */}
         <button
@@ -48,12 +62,16 @@ export default function MobileBottomNav({
           <span className="mobile-nav-label center-label">Enquire</span>
         </button>
 
-        <a href="#services" className="mobile-nav-tab" aria-label="HVAC Services">
+        <Link
+          href="/#services"
+          className="mobile-nav-tab"
+          aria-label="HVAC Services"
+        >
           <span className="mobile-nav-icon">
             <Wrench size={20} />
           </span>
           <span className="mobile-nav-label">Services</span>
-        </a>
+        </Link>
 
         <button
           type="button"
