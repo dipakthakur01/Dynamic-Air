@@ -149,13 +149,13 @@ export default function SolutionsSection({
 
           <div className="brochures-download-group">
             <a
-              href="/docs/climix-air-curtain-catalog.pdf"
+              href="/docs/q-series-air-curtain-brochure.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="brochure-download-pill"
-              title="Download Climix Air Curtain Catalog PDF"
+              title="Download Climix Q Series Air Curtain Brochure PDF"
             >
-              <Download size={15} /> Climix Catalog (PDF)
+              <Download size={15} /> Climix Q Series (PDF)
             </a>
             <a
               href="/docs/commercial-ac-brochure.pdf"
@@ -174,6 +174,33 @@ export default function SolutionsSection({
               title="Download Wall-Mounted AC Brochure PDF"
             >
               <Download size={15} /> Wall-Mounted AC (PDF)
+            </a>
+            <a
+              href="/docs/cold-storage-brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brochure-download-pill"
+              title="Download Modular Cold Storage Solutions Brochure PDF"
+            >
+              <Download size={15} /> Cold Storage (PDF)
+            </a>
+            <a
+              href="/docs/air-purifier-brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brochure-download-pill"
+              title="Download Smart HEPA Air Purifier Brochure PDF"
+            >
+              <Download size={15} /> HEPA Air Purifier (PDF)
+            </a>
+            <a
+              href="/docs/amc-service-brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brochure-download-pill"
+              title="Download AMC Maintenance Service Brochure PDF"
+            >
+              <Download size={15} /> AMC Service (PDF)
             </a>
           </div>
         </div>

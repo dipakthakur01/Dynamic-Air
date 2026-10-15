@@ -42,7 +42,7 @@ export const products: Product[] = [
     ],
     idealFor:
       'Hospitals, Cold storage, Restaurants, Hotels, Supermarkets & Factories',
-    brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
+    brochureUrl: '/docs/q-series-air-curtain-brochure.pdf',
     specSummary: '100W – 200W · 220–240V 50Hz · 8–11 m/s · 1600–3800 m³/h',
   },
   {
@@ -61,7 +61,7 @@ export const products: Product[] = [
     ],
     idealFor:
       'Retail stores, restaurant entrances, hospital corridors, cold storage doors & warehouse loading docks',
-    brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
+    brochureUrl: '/docs/q-series-air-curtain-brochure.pdf',
   },
   {
     id: 'industrial-centrifugal-air-curtain',
@@ -172,6 +172,7 @@ export const products: Product[] = [
     ],
     idealFor:
       'Cold storage facilities, supermarkets, hotels, restaurants, dairy, pharmaceuticals & food processing',
+    brochureUrl: '/docs/cold-storage-brochure.pdf',
     specSummary: 'Chiller (+2° to +8°C) · Freezer (-18° to -25°C) · PUF Panels · Digital Controller',
   },
 
@@ -198,6 +199,7 @@ export const products: Product[] = [
     ],
     idealFor:
       'Residential living rooms, master bedrooms, executive cabins, private clinics, conference halls & reception lounges',
+    brochureUrl: '/docs/air-purifier-brochure.pdf',
     specSummary: 'Available in Different Sizes · 450 m³/h CADR · True HEPA & Carbon · 45W · Quiet 64.5 dB(A)',
   },
 ];
@@ -243,16 +245,16 @@ export const services: Service[] = [
     title: 'Professional HVAC installation & piping',
     short: 'Certified technicians, leak-proof copper piping.',
     description:
-      'Complete copper pipe flaring, nitrogen pressure test, deep vacuum evacuation, and safe electrical breaker wiring.',
+      'Complete copper pipe flaring, nitrogen pressure test, leak-tight line inspection, and safe electrical breaker wiring.',
     points: [
       'Pure copper tubing with heavy insulation protection',
-      'Vacuum pump evacuation before refrigerant release',
+      'Digital manifold pressure check and leak-tight commissioning',
       'Airflow balance check and anti-vibration outdoor mounting',
     ],
     image: '/images/service-hvac-piping.jpeg',
-    imageAlt: 'Professional HVAC copper piping installation, vacuum pump, and precision manifold equipment',
+    imageAlt: 'Professional HVAC copper piping installation, precision manifold equipment, and outdoor unit mounting',
     badgeLabel: 'CERTIFIED HVAC ENGINEERING',
-    tagline: 'Pure copper piping & deep vacuum testing.',
+    tagline: 'Pure copper piping & precision pressure testing.',
   },
   {
     number: '04',
@@ -270,6 +272,7 @@ export const services: Service[] = [
     imageAlt: 'Certified technician performing AC refrigerant gas charging and outdoor unit diagnostics',
     badgeLabel: 'DIAGNOSTICS & LIFELONG AMC CARE',
     tagline: 'Precision gas charging & peak cooling reliability.',
+    brochureUrl: '/docs/amc-service-brochure.pdf',
   },
 ];
 
@@ -277,7 +280,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'What is an air curtain and why do I need one for my business?',
     answer:
-      'A Climix Q Series air curtain creates a powerful, continuous barrier of high-velocity air across your doorway (up to 3 meters high). It keeps conditioned cool air inside, stops outdoor heat, dust, vehicle fumes, and flying insects from entering, and saves up to 40% on AC electricity costs.',
+      'A Climix Q Series air curtain creates a powerful, continuous barrier of high-velocity air across your doorway (up to 3 meters high). It keeps conditioned cool air inside, stops outdoor heat, dust, vehicle fumes, and flying insects from entering, and cuts doorway thermal loss by up to 80%.',
   },
   {
     question: 'Which size Climix air curtain is suitable for my door?',

@@ -31,6 +31,7 @@ export interface Service {
   imageAlt?: string;
   badgeLabel?: string;
   tagline?: string;
+  brochureUrl?: string;
 }
 
 export interface FaqItem {

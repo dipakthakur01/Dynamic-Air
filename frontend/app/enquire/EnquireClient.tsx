@@ -337,7 +337,7 @@ Please share equipment availability, on-site assessment schedule, and quotation.
                   </div>
                   <div className="trust-point">
                     <Check size={14} />
-                    <span>Genuine copper piping & vacuum setup</span>
+                    <span>HVAC installation & genuine copper piping</span>
                   </div>
                   <div className="trust-point">
                     <Check size={14} />

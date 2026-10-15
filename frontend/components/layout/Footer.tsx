@@ -71,8 +71,8 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
             <a href="#solutions">VRF Systems (4 HP Mini to Commercial)</a>
             <a href="#solutions">Modular Cold Rooms</a>
             <a href="#solutions">Smart HEPA Air Purifiers</a>
-            <a href="/docs/climix-air-curtain-catalog.pdf" target="_blank" rel="noopener noreferrer">
-              Download Climix Catalog (PDF)
+            <a href="/docs/q-series-air-curtain-brochure.pdf" target="_blank" rel="noopener noreferrer">
+              Climix Q Series Brochure (PDF)
             </a>
             <a href="/docs/commercial-ac-brochure.pdf" target="_blank" rel="noopener noreferrer">
               Commercial AC Brochure (PDF)
@@ -80,15 +80,24 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
             <a href="/docs/wall-mounted-ac-brochure.pdf" target="_blank" rel="noopener noreferrer">
               Wall-Mounted AC Brochure (PDF)
             </a>
+            <a href="/docs/cold-storage-brochure.pdf" target="_blank" rel="noopener noreferrer">
+              Cold Storage Brochure (PDF)
+            </a>
+            <a href="/docs/air-purifier-brochure.pdf" target="_blank" rel="noopener noreferrer">
+              Smart HEPA Purifier Brochure (PDF)
+            </a>
           </nav>
 
           <nav aria-label="Footer services">
             <span>ENGINEERING SERVICES</span>
             <a href="#services">Air Curtain Installation</a>
             <a href="#services">Heat Load Assessment</a>
-            <a href="#services">Copper Piping &amp; Vacuum Setup</a>
+            <a href="#services">HVAC Installation &amp; Copper Piping</a>
             <a href="#services">Gas Charging &amp; Coil Servicing</a>
             <a href="#services">Annual Maintenance AMC</a>
+            <a href="/docs/amc-service-brochure.pdf" target="_blank" rel="noopener noreferrer">
+              AMC Maintenance Brochure (PDF)
+            </a>
           </nav>
 
           <nav aria-label="Footer contact">

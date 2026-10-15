@@ -14,6 +14,7 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  FileText,
 } from 'lucide-react';
 import type { Service } from '@/types';
 
@@ -288,6 +289,18 @@ export default function ServicesSection({
                           Enquire about this service
                           <Plus size={15} />
                         </button>
+                        {item.brochureUrl && (
+                          <a
+                            href={item.brochureUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-link"
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginLeft: '16px' }}
+                          >
+                            <FileText size={15} />
+                            Download Brochure (PDF)
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

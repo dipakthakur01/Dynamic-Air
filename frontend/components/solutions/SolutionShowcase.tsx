@@ -308,13 +308,16 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
                   <p className="field-value">{selectedProduct.idealFor}</p>
                 </div>
 
-                <div className="deployment-field">
-                  <span className="field-label">ENERGY CONSERVATION RATING</span>
-                  <p className="field-value">
-                    Engineered to reduce air exchange thermal losses by up to <strong>40%</strong>,
-                    drastically lowering commercial air conditioning and refrigeration power consumption.
-                  </p>
-                </div>
+                {(selectedProduct.category === 'Climix Air Curtains' ||
+                  selectedProduct.id.includes('air-curtain')) && (
+                  <div className="deployment-field">
+                    <span className="field-label">ENERGY CONSERVATION RATING</span>
+                    <p className="field-value">
+                      Engineered to reduce air exchange thermal losses by up to <strong>80%</strong>,
+                      drastically lowering commercial air conditioning and refrigeration power consumption.
+                    </p>
+                  </div>
+                )}
 
                 <div className="deployment-field">
                   <span className="field-label">INCLUDED DYNAMIC AIR SERVICES</span>
@@ -327,9 +330,6 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
                     </span>
                     <span className="service-chip">
                       <CheckCircle2 size={13} /> Professional Mounting
-                    </span>
-                    <span className="service-chip">
-                      <CheckCircle2 size={13} /> Copper Vacuum Setup
                     </span>
                     <span className="service-chip">
                       <CheckCircle2 size={13} /> 1-Year AMC Warranty
