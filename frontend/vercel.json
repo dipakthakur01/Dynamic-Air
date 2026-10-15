@@ -1,4 +1,14 @@
 {
   "cleanUrls": false,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/googlee2fa6752e72140d2.html",
+      "destination": "/googlee2fa6752e72140d2"
+    },
+    {
+      "source": "/googlee2fa6752e72140d2",
+      "destination": "/googlee2fa6752e72140d2"
+    }
+  ]
 }
