@@ -147,14 +147,35 @@ export default function SolutionsSection({
             </button>
           </div>
 
-          <a
-            href="/docs/climix-air-curtain-catalog.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="brochure-download-pill"
-          >
-            <Download size={15} /> Download Climix Q Series Catalog (PDF)
-          </a>
+          <div className="brochures-download-group">
+            <a
+              href="/docs/climix-air-curtain-catalog.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brochure-download-pill"
+              title="Download Climix Air Curtain Catalog PDF"
+            >
+              <Download size={15} /> Climix Catalog (PDF)
+            </a>
+            <a
+              href="/docs/commercial-ac-brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brochure-download-pill"
+              title="Download Commercial AC Brochure PDF"
+            >
+              <Download size={15} /> Commercial AC (PDF)
+            </a>
+            <a
+              href="/docs/wall-mounted-ac-brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brochure-download-pill"
+              title="Download Wall-Mounted AC Brochure PDF"
+            >
+              <Download size={15} /> Wall-Mounted AC (PDF)
+            </a>
+          </div>
         </div>
       </div>
     </section>

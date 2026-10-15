@@ -31,7 +31,7 @@ export default function ContactSection({
             <br className="desktop-only" /> Call, WhatsApp, or enquire today for quotations and on-site assessments.
           </p>
           <div className="contact-cta-row">
-            <button className="button button-dark" onClick={onOpenEnquiry}>
+            <button className="button button-dark" onClick={() => onOpenEnquiry()}>
               Make an enquiry <MessageCircle size={18} />
             </button>
             {business.whatsapp && (

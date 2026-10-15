@@ -53,21 +53,27 @@ export default function EnquiryModal({
 
   const targetWhatsapp = business.whatsapp || '9779715023725';
 
-  const interestOptions = Array.from(
-    new Set([
-      interest,
-      'Climix Q Series Air Curtain',
-      'Smart HEPA Air Purifier (Different Sizes)',
-      'Residential Wall-Mounted Split AC',
-      'VRF / VRV System (4 HP Mini VRF to Commercial)',
-      '4-Way Ceiling Cassette AC',
-      'Modular Cold Room (Chiller & Freezer)',
-      'HVAC Installation & Copper Piping',
-      'Repair & Gas Charging',
-      'Annual Maintenance Contract (AMC)',
-      'General enquiry',
-    ])
-  );
+  const safeInterest =
+    typeof interest === 'string' && interest.trim().length > 0
+      ? interest.trim()
+      : 'Smart HEPA Air Purifier (Different Sizes)';
+
+  const baseOptions = [
+    'Smart HEPA Air Purifier (Different Sizes)',
+    'Residential Wall-Mounted Split AC',
+    'VRF / VRV System (4 HP Mini VRF to Commercial)',
+    '4-Way Ceiling Cassette AC',
+    'Modular Cold Room (Chiller & Freezer)',
+    'HVAC Installation & Copper Piping',
+    'Repair & Gas Charging',
+    'Annual Maintenance Contract (AMC)',
+    'Climix Q Series Air Curtain',
+    'General enquiry',
+  ];
+
+  const interestOptions = baseOptions.includes(safeInterest)
+    ? baseOptions
+    : [safeInterest, ...baseOptions];
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -78,7 +84,7 @@ export default function EnquiryModal({
     const data = new FormData(form);
     const name = String(data.get('name') || '').trim();
     const contact = String(data.get('contact') || '').trim();
-    const selectedInterest = String(data.get('interest') || interest).trim();
+    const selectedInterest = String(data.get('interest') || safeInterest).trim();
     const location = String(data.get('location') || '').trim() || 'Kathmandu, Nepal';
     const message = String(data.get('message') || '').trim();
 
@@ -258,11 +264,13 @@ Please share equipment availability, on-site assessment schedule, and quotation.
                   I’m interested in
                   <select
                     name="interest"
-                    value={interest}
+                    value={safeInterest}
                     onChange={(event) => setInterest(event.target.value)}
                   >
                     {interestOptions.map((item) => (
-                      <option key={item}>{item}</option>
+                      <option key={String(item)} value={String(item)}>
+                        {String(item)}
+                      </option>
                     ))}
                   </select>
                 </label>
@@ -356,7 +364,7 @@ Please share equipment availability, on-site assessment schedule, and quotation.
                   Send Current Enquiry to WhatsApp
                 </h3>
                 <p className="whatsapp-card-desc">
-                  Chat directly with our technician on WhatsApp (<strong>+977 9715023725</strong>) for instant quotations and equipment recommendation.
+                  Chat directly with our technician on WhatsApp for instant quotations and equipment recommendation.
                 </p>
                 <a
                   href={`https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(draft)}`}
@@ -365,7 +373,7 @@ Please share equipment availability, on-site assessment schedule, and quotation.
                   className="button button-whatsapp whatsapp-direct-send-btn"
                 >
                   <MessageCircle size={19} />
-                  <span>Send Current Enquiry to WhatsApp (+977 9715023725)</span>
+                  <span>Send Current Enquiry to WhatsApp</span>
                   <ExternalLink size={15} />
                 </a>
               </div>

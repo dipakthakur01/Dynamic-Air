@@ -74,6 +74,12 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
             <a href="/docs/climix-air-curtain-catalog.pdf" target="_blank" rel="noopener noreferrer">
               Download Climix Catalog (PDF)
             </a>
+            <a href="/docs/commercial-ac-brochure.pdf" target="_blank" rel="noopener noreferrer">
+              Commercial AC Brochure (PDF)
+            </a>
+            <a href="/docs/wall-mounted-ac-brochure.pdf" target="_blank" rel="noopener noreferrer">
+              Wall-Mounted AC Brochure (PDF)
+            </a>
           </nav>
 
           <nav aria-label="Footer services">
@@ -127,7 +133,7 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
                 <Mail size={14} /> {business.email}
               </a>
             )}
-            <button onClick={onOpenEnquiry} className="footer-enquiry-btn">
+            <button onClick={() => onOpenEnquiry()} className="footer-enquiry-btn">
               Make an enquiry &rarr;
             </button>
             <span className="footer-domain">dynamicair.com.np</span>

@@ -64,6 +64,65 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/logo-round.png" />
         <meta name="mobile-web-app-capable" content="yes" />
         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'HVACBusiness',
+                  '@id': 'https://dynamicair.com.np/#business',
+                  name: 'Dynamic Air Solutions Pvt. Ltd.',
+                  alternateName: 'Dynamic Air Solutions Nepal',
+                  url: 'https://dynamicair.com.np',
+                  logo: 'https://dynamicair.com.np/images/dynamic-air-logo.png',
+                  image: 'https://dynamicair.com.np/images/climix-air-curtain-hero.png',
+                  description:
+                    'Authorized Climix Distributor in Nepal. Supplying Climix Q Series Cross Flow Air Curtains, Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Smart HEPA Air Purifiers with professional HVAC engineering, site survey, and AMC support across Kathmandu and Nepal.',
+                  telephone: ['+977-9851123725', '+977-9715023725'],
+                  email: 'sdynamicair@gmail.com',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: 'Kathmandu Engineering Hub',
+                    addressLocality: 'Kathmandu',
+                    addressCountry: 'NP',
+                  },
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 27.7172,
+                    longitude: 85.324,
+                  },
+                  openingHoursSpecification: {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                    opens: '09:00',
+                    closes: '18:30',
+                  },
+                  priceRange: '$$',
+                  areaServed: {
+                    '@type': 'Country',
+                    name: 'Nepal',
+                  },
+                  sameAs: [
+                    'https://www.facebook.com/share/1C7B7pXJVV/',
+                    'https://www.instagram.com/dynamicairsolution',
+                    'https://www.tiktok.com/@dynamic.air.solutions',
+                  ],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://dynamicair.com.np/#website',
+                  url: 'https://dynamicair.com.np',
+                  name: 'Dynamic Air Solutions Pvt. Ltd.',
+                  publisher: {
+                    '@id': 'https://dynamicair.com.np/#business',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('dynamic_air_theme');if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
           }}

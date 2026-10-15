@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wind, Snowflake, Building2, Box, Wrench } from 'lucide-react';
+import { Wind, Snowflake, Building2, Box, Wrench, Sparkles } from 'lucide-react';
 
 export default function ExpertiseStrip() {
   return (
@@ -25,6 +25,10 @@ export default function ExpertiseStrip() {
         <div>
           <Wrench size={18} />
           HVAC Services &amp; AMC
+        </div>
+        <div>
+          <Sparkles size={18} />
+          Air Purifiers
         </div>
       </div>
     </div>

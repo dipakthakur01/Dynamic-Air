@@ -47,5 +47,62 @@ export default async function SolutionSlugPage({ params }: SolutionSlugPageProps
     notFound();
   }
 
-  return <SolutionShowcase initialProduct={product} />;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Product',
+        name: product.name,
+        description: product.description,
+        image: `https://dynamicair.com.np${product.image}`,
+        brand: {
+          '@type': 'Brand',
+          name: product.category.includes('Climix') ? 'Climix' : 'Dynamic Air',
+        },
+        category: product.category,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'NPR',
+          seller: {
+            '@type': 'Organization',
+            name: 'Dynamic Air Solutions Pvt. Ltd.',
+          },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://dynamicair.com.np',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Solutions',
+            item: 'https://dynamicair.com.np/solutions',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: product.name,
+            item: `https://dynamicair.com.np/solutions/${slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SolutionShowcase initialProduct={product} />
+    </>
+  );
 }

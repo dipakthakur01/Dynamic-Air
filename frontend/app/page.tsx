@@ -213,8 +213,20 @@ export default function Home() {
 
   useEffect(() => {
     const dialog = dialogRef.current;
-    if (enquiryOpen && dialog && !dialog.open) dialog.showModal();
-    if (!enquiryOpen && dialog?.open) dialog.close();
+    if (enquiryOpen && dialog && !dialog.open) {
+      try {
+        dialog.showModal();
+      } catch (err) {
+        console.warn('[EnquiryModal] showModal error:', err);
+      }
+    }
+    if (!enquiryOpen && dialog?.open) {
+      try {
+        dialog.close();
+      } catch (err) {
+        console.warn('[EnquiryModal] close error:', err);
+      }
+    }
     document.body.style.overflow =
       enquiryOpen || product || menuOpen ? 'hidden' : '';
     return () => {
@@ -224,8 +236,20 @@ export default function Home() {
 
   useEffect(() => {
     const el = productRef.current;
-    if (product && el && !el.open) el.showModal();
-    if (!product && el?.open) el.close();
+    if (product && el && !el.open) {
+      try {
+        el.showModal();
+      } catch (err) {
+        console.warn('[ProductModal] showModal error:', err);
+      }
+    }
+    if (!product && el?.open) {
+      try {
+        el.close();
+      } catch (err) {
+        console.warn('[ProductModal] close error:', err);
+      }
+    }
   }, [product]);
 
   useEffect(() => {
@@ -237,15 +261,39 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKey);
   }, [menuOpen]);
 
-  const openEnquiry = useCallback((topic = 'Climix Q Series Air Curtain') => {
+  const openEnquiry = useCallback((topic?: string | unknown) => {
     lastFocus.current = document.activeElement as HTMLElement;
     setProduct(null);
-    setInterest(topic);
+    const validTopic =
+      typeof topic === 'string' && topic.trim().length > 0
+        ? topic.trim()
+        : 'Climix Q Series Air Curtain';
+    setInterest(validTopic);
     setDraft('');
     setNotice('');
     setMenuOpen(false);
     setEnquiryOpen(true);
   }, []);
+
+  // Listen for direct URL hash or query triggers e.g. /#enquire or /?enquire=true
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const checkEnquiryTrigger = () => {
+      const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      if (
+        hash === '#enquire' ||
+        hash === '#enquiry' ||
+        params.get('enquire') === 'true' ||
+        params.get('enquiry') === 'true'
+      ) {
+        openEnquiry();
+      }
+    };
+    checkEnquiryTrigger();
+    window.addEventListener('hashchange', checkEnquiryTrigger);
+    return () => window.removeEventListener('hashchange', checkEnquiryTrigger);
+  }, [openEnquiry]);
 
   const closeEnquiry = useCallback(() => {
     setEnquiryOpen(false);
@@ -319,15 +367,15 @@ export default function Home() {
           onOpenEnquiry={openEnquiry}
         />
 
-        <ContactSection business={business} onOpenEnquiry={openEnquiry} />
+        <ContactSection business={business} onOpenEnquiry={() => openEnquiry()} />
       </main>
 
-      <Footer business={business} onOpenEnquiry={openEnquiry} />
+      <Footer business={business} onOpenEnquiry={() => openEnquiry()} />
 
       <MobileBottomNav
         menuOpen={menuOpen}
         onToggleMenu={() => setMenuOpen((prev) => !prev)}
-        onOpenEnquiry={openEnquiry}
+        onOpenEnquiry={() => openEnquiry()}
       />
 
       <ProductModal

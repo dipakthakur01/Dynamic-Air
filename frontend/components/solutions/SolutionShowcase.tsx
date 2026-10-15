@@ -67,20 +67,58 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
     } catch {}
   };
 
-  const handleOpenEnquiry = (topic?: string) => {
-    setInterest(topic || selectedProduct.name);
+  const handleOpenEnquiry = (topic?: string | unknown) => {
+    const validTopic =
+      typeof topic === 'string' && topic.trim().length > 0
+        ? topic.trim()
+        : selectedProduct.name;
+    setInterest(validTopic);
+    setDraft('');
+    setNotice('');
+    setMenuOpen(false);
     setEnquiryOpen(true);
     if (dialogRef.current && !dialogRef.current.open) {
-      dialogRef.current.showModal();
+      try {
+        dialogRef.current.showModal();
+      } catch (e) {
+        console.warn('[EnquiryModal] showModal error:', e);
+      }
     }
   };
 
   const handleCloseEnquiry = () => {
     setEnquiryOpen(false);
     if (dialogRef.current?.open) {
-      dialogRef.current.close();
+      try {
+        dialogRef.current.close();
+      } catch (e) {
+        console.warn('[EnquiryModal] close error:', e);
+      }
     }
   };
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (enquiryOpen && dialog && !dialog.open) {
+      try {
+        dialog.showModal();
+      } catch (e) {
+        console.warn('[EnquiryModal] showModal error:', e);
+      }
+    }
+    if (!enquiryOpen && dialog?.open) {
+      try {
+        dialog.close();
+      } catch (e) {
+        console.warn('[EnquiryModal] close error:', e);
+      }
+    }
+    document.body.style.overflow =
+      enquiryOpen || menuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [enquiryOpen, menuOpen]);
 
   const handleSelectProduct = (p: Product) => {
     setSelectedProduct(p);

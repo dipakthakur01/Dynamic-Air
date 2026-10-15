@@ -103,6 +103,7 @@ export const products: Product[] = [
     ],
     idealFor:
       'Residential bedrooms, living halls, home offices, and apartment complexes',
+    brochureUrl: '/docs/wall-mounted-ac-brochure.pdf',
     specSummary: '1.0T – 2.0T · Inverter & Normal · R32 / R410A · Whisper Quiet',
   },
 
@@ -127,6 +128,7 @@ export const products: Product[] = [
     ],
     idealFor:
       'Residential duplexes, luxury villas, commercial towers, corporate offices, hotels, hospitals, bank branches & institutions',
+    brochureUrl: '/docs/commercial-ac-brochure.pdf',
     specSummary: '4 HP (Mini VRF) to 96+ HP Commercial · 100% Inverter · Multi-Zone VRF · BMS Integration',
   },
   {
@@ -147,7 +149,7 @@ export const products: Product[] = [
     ],
     idealFor:
       'Office spaces, conference halls, retail showrooms, restaurants, and banks',
-    brochureUrl: '/docs/climix-air-curtain-catalog.pdf',
+    brochureUrl: '/docs/commercial-ac-brochure.pdf',
     specSummary: '2.0TR – 4.0TR · Inverter & Normal · 360° Airflow · Built-In Drain Pump',
   },
 

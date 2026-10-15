@@ -51,8 +51,8 @@ export default function MobileBottomNav({
         {/* Center Primary Action: Enquire */}
         <button
           type="button"
-          onClick={onOpenEnquiry}
-          className="mobile-nav-tab mobile-nav-center-action"
+          onClick={() => onOpenEnquiry()}
+          className={`mobile-nav-tab mobile-nav-center-action ${pathname === '/enquire' || pathname === '/enquiry' ? 'is-active' : ''}`}
           aria-label="Make an enquiry"
         >
           <span className="center-action-glow" />
