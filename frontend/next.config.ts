@@ -6,5 +6,8 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   devIndicators: false,
   allowedDevOrigins: ['terminal.local'],
+  experimental: {
+    agentUpgrade: 'security' as any,
+  },
 };
 export default nextConfig;

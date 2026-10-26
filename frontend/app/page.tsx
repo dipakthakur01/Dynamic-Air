@@ -327,7 +327,7 @@ export default function Home() {
         onInstallApp={handleInstallApp}
       />
 
-      <main id="main">
+      <main id="main" className="home-page">
         <HeroSection
           slides={slides}
           slide={slide}

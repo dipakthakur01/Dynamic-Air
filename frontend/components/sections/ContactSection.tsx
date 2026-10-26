@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { MessageCircle, Wind, Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { MessageCircle, Wind, Mail, Phone, MapPin, Clock, MessageSquare, ExternalLink } from 'lucide-react';
 import type { BusinessConfig } from '@/types';
 import SocialLinks from '@/components/ui/SocialLinks';
 
@@ -123,12 +123,18 @@ export default function ContactSection({
         )}
 
         {business.address && (
-          <span className="business-badge-info">
+          <a
+            href={business.mapsUrl || 'https://maps.google.com/?cid=2143714271384015274'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="business-badge-link"
+            title="Open Dynamic Air Solutions in Google Maps"
+          >
             <MapPin size={18} />
             <span>
               <strong>Location:</strong> {business.address}
             </span>
-          </span>
+          </a>
         )}
 
         {business.openingHours && (
@@ -146,6 +152,45 @@ export default function ContactSection({
             <SocialLinks socials={business.socials} variant="card" />
           </div>
         )}
+      </div>
+
+      {/* Interactive Google Map Section */}
+      <div className="container contact-map-wrapper">
+        <div className="contact-map-card">
+          <div className="contact-map-header">
+            <div className="contact-map-header-left">
+              <span className="map-badge">
+                <MapPin size={15} /> VISIT OUR OFFICE & WAREHOUSE
+              </span>
+              <h3 className="map-title">Dynamic Air Solutions Pvt. Ltd.</h3>
+              <p className="map-subtitle">
+                Kathmandu, Nepal &middot; Authorized Climix Engineering, Sales & Service Center
+              </p>
+            </div>
+            <a
+              href={business.mapsUrl || 'https://maps.google.com/?cid=2143714271384015274'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="map-directions-btn"
+              title="Open Dynamic Air Solutions in Google Maps"
+            >
+              <span>Get Directions</span>
+              <ExternalLink size={15} />
+            </a>
+          </div>
+          <div className="contact-map-frame-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.975939973865!2d85.30396019999999!3d27.6871385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19767fd824a1%3A0x1dbfef658cc711aa!2sDynamic%20Air%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2snp!4v1792977855296!5m2!1sen!2snp"
+              width="100%"
+              height="380"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Dynamic Air Solutions Pvt Ltd Google Maps Location"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

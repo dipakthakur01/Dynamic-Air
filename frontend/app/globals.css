@@ -621,8 +621,24 @@ svg {
   box-shadow: 0 0 8px rgba(0, 194, 203, 0.5);
 }
 
-.desktop-nav a:hover:after {
+.desktop-nav a:hover:after,
+.desktop-nav a.is-active:after {
   transform: scaleX(1);
+}
+
+.desktop-nav a.is-active {
+  color: var(--cyan) !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .desktop-nav a.is-active {
+  color: #00828a !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .desktop-nav a.is-active:after {
+  background: #00828a !important;
+  box-shadow: 0 0 8px rgba(0, 130, 138, 0.4) !important;
 }
 
 .header-cta {
@@ -3950,19 +3966,33 @@ input::placeholder, textarea::placeholder {
    ========================================================================== */
 
 [data-reveal] {
-  opacity: 1;
-  transform: none;
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
 }
 
-.js-motion [data-reveal] {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+/* Subtle entrance animation on the home page when js-motion is active */
+.js-motion .home-page [data-reveal]:not(.revealed) {
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
 }
 
-.js-motion [data-reveal].revealed {
-  opacity: 1;
-  transform: translateY(0);
+.js-motion .home-page [data-reveal].revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* On all subpages, ensure everything with data-reveal is ALWAYS 100% visible */
+.solution-showcase-wrapper [data-reveal],
+.services-page-wrapper [data-reveal],
+.about-page-wrapper [data-reveal],
+.contact-page-wrapper [data-reveal],
+.enquire-page-wrapper [data-reveal],
+[data-reveal].revealed {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
 }
 
 .values-grid article:nth-child(2),
@@ -5176,9 +5206,25 @@ input::placeholder, textarea::placeholder {
   border-color: #e2e8f0;
 }
 
-[data-theme="light"] .drawer-nav-item:hover {
+[data-theme="light"] .drawer-nav-item:hover,
+[data-theme="light"] .drawer-nav-item.is-active {
   background: #eef7f9;
-  border-color: #b9e3e7;
+  border-color: #00828a;
+}
+
+.drawer-nav-item.is-active {
+  background: rgba(0, 194, 203, 0.12) !important;
+  border-color: rgba(0, 194, 203, 0.5) !important;
+}
+
+.drawer-nav-item.is-active .drawer-item-label {
+  color: var(--cyan) !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="light"] .drawer-nav-item.is-active .drawer-item-label {
+  color: #00828a !important;
+  font-weight: 700 !important;
 }
 
 [data-theme="light"] .drawer-item-label {
@@ -7451,6 +7497,258 @@ input::placeholder, textarea::placeholder {
     font-size: 21px;
   }
 }
+
+/* ==========================================================================
+   GOOGLE MAPS INTEGRATION (HOMEPAGE & ENQUIRY DESK)
+   ========================================================================== */
+
+/* Homepage Contact Section Map Card */
+.contact-map-wrapper {
+  margin-top: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-map-card {
+  background: rgba(6, 26, 38, 0.78);
+  border: 1px solid rgba(0, 194, 203, 0.28);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 194, 203, 0.12);
+  backdrop-filter: blur(14px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-map-card:hover {
+  border-color: rgba(0, 194, 203, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 194, 203, 0.2);
+}
+
+.contact-map-header {
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.contact-map-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-map-header .map-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  text-transform: uppercase;
+}
+
+.contact-map-header .map-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.contact-map-header .map-subtitle {
+  font-size: 13.5px;
+  color: #a3c4d7;
+  margin: 0;
+}
+
+.contact-map-header .map-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid rgba(0, 194, 203, 0.4);
+  background: rgba(0, 194, 203, 0.12);
+  border-radius: 99px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.contact-map-header .map-directions-btn:hover {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: #070d14;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 194, 203, 0.35);
+}
+
+.contact-map-frame-wrap {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  background: #09131d;
+}
+
+.contact-map-frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* Dedicated Enquiry Page Map Card */
+.enquire-map-card {
+  margin-top: 24px;
+  background: #ffffff;
+  border: 1px solid #dce8ef;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .enquire-map-card {
+  background: rgba(11, 23, 34, 0.85);
+  border-color: rgba(0, 194, 203, 0.22);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.enquire-map-header {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #eef4f8;
+  background: #f7fafc;
+}
+
+[data-theme="dark"] .enquire-map-header {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.enquire-map-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  text-transform: uppercase;
+}
+
+.enquire-map-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0b1f2d;
+  margin: 2px 0 0;
+}
+
+[data-theme="dark"] .enquire-map-title {
+  color: #ffffff;
+}
+
+.enquire-directions-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal-primary, #00828a);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 130, 138, 0.25);
+  background: rgba(0, 130, 138, 0.06);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .enquire-directions-link {
+  color: var(--cyan);
+  border-color: rgba(0, 194, 203, 0.3);
+  background: rgba(0, 194, 203, 0.1);
+}
+
+.enquire-directions-link:hover {
+  background: var(--teal-primary, #00828a);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .enquire-directions-link:hover {
+  background: var(--cyan);
+  color: #070d14;
+}
+
+.enquire-map-frame-box {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  background: #09131d;
+}
+
+.enquire-map-frame-box iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-map-header {
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-map-frame-wrap {
+    height: 300px;
+  }
+}
+
+/* ==========================================================================
+   SUBPAGES CLEAN LAYOUT & PADDING FIXES
+   ========================================================================== */
+
+.services-page-main,
+.about-page-main,
+.contact-page-main {
+  padding-top: 88px;
+  min-height: calc(100vh - 200px);
+  position: relative;
+}
+
+.services-page-main .services-section,
+.about-page-main .about-section,
+.contact-page-main .contact-section {
+  padding-top: 20px;
+}
+
+[data-theme="light"] .services-page-main,
+[data-theme="light"] .about-page-main,
+[data-theme="light"] .contact-page-main {
+  background: #f8fafc;
+}
+
+.services-page-main .process-section,
+.about-page-main .process-section {
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+.about-page-main .faq-section {
+  padding-top: 48px;
+  padding-bottom: 80px;
+}
+
+
 
 
 

@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Menu,
   X,
@@ -33,37 +34,37 @@ const detailedNavLinks = [
   {
     num: '01',
     label: 'Air Curtains & Cooling Solutions',
-    id: 'solutions',
+    href: '/solutions',
     desc: 'Climix Air Curtains, Split AC, VRF & Cold Rooms',
   },
   {
     num: '02',
     label: 'HVAC Engineering Services',
-    id: 'services',
+    href: '/services',
     desc: 'Installation, Heat Load & Maintenance AMC',
   },
   {
     num: '03',
     label: 'About Dynamic Air',
-    id: 'about',
+    href: '/about',
     desc: 'Authorized Climix Distributor in Nepal',
   },
   {
     num: '04',
     label: '3-Step Working Process',
-    id: 'process',
+    href: '/services#process',
     desc: 'Site Survey, Sizing & Deployment',
   },
   {
     num: '05',
     label: 'Frequently Asked Questions',
-    id: 'faq',
+    href: '/about#faq',
     desc: 'Door Dimensions, Sizing & Power Savings',
   },
   {
     num: '06',
     label: 'Contact & Kathmandu Office',
-    id: 'contact',
+    href: '/contact',
     desc: 'Direct Phone, WhatsApp & Site Visits',
   },
 ];
@@ -79,6 +80,48 @@ export default function Header({
   installPrompt,
   onInstallApp,
 }: HeaderProps) {
+  const pathname = usePathname();
+  const [activeHash, setActiveHash] = useState<string>('');
+
+  // Track active section when on homepage
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (pathname !== '/') {
+      setActiveHash('');
+      return;
+    }
+
+    const sections = ['contact', 'about', 'services', 'solutions'];
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 220;
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveHash(id);
+            return;
+          }
+        }
+      }
+      setActiveHash('');
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
+
+  const isSolutionsActive =
+    pathname?.startsWith('/solutions') || (pathname === '/' && activeHash === 'solutions');
+  const isServicesActive =
+    pathname?.startsWith('/services') || (pathname === '/' && activeHash === 'services');
+  const isAboutActive =
+    pathname?.startsWith('/about') || (pathname === '/' && activeHash === 'about');
+  const isContactActive =
+    pathname?.startsWith('/contact') || (pathname === '/' && activeHash === 'contact');
+
   // Close menu on ESC key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -109,7 +152,7 @@ export default function Header({
           {/* Brand Logo */}
           <Link
             className="brand header-brand"
-            href="/#home"
+            href="/"
             aria-label="Dynamic Air Solutions Pvt. Ltd. home"
             onClick={() => setMenuOpen(false)}
           >
@@ -140,12 +183,32 @@ export default function Header({
             </div>
           </Link>
 
-          {/* Desktop Quick Nav */}
+          {/* Desktop Quick Nav with Active Highlight */}
           <nav className="desktop-nav" aria-label="Main navigation">
-            <Link href="/#solutions">Solutions</Link>
-            <Link href="/#services">Services</Link>
-            <Link href="/#about">About</Link>
-            <Link href="/#contact">Contact</Link>
+            <Link
+              href="/solutions"
+              className={isSolutionsActive ? 'is-active' : ''}
+            >
+              Solutions
+            </Link>
+            <Link
+              href="/services"
+              className={isServicesActive ? 'is-active' : ''}
+            >
+              Services
+            </Link>
+            <Link
+              href="/about"
+              className={isAboutActive ? 'is-active' : ''}
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className={isContactActive ? 'is-active' : ''}
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Header Actions */}
@@ -267,21 +330,29 @@ export default function Header({
           {/* Navigation Links */}
           <nav className="drawer-nav-list" aria-label="Detailed sections">
             <span className="drawer-nav-caption">SECTIONS &amp; PAGES</span>
-            {detailedNavLinks.map(({ num, label, id, desc }) => (
-              <Link
-                key={id}
-                href={`/#${id}`}
-                className="drawer-nav-item"
-                onClick={() => setMenuOpen(false)}
-              >
-                <span className="drawer-item-num">{num}</span>
-                <span className="drawer-item-content">
-                  <span className="drawer-item-label">{label}</span>
-                  <span className="drawer-item-desc">{desc}</span>
-                </span>
-                <ChevronRight size={16} className="drawer-item-arrow" />
-              </Link>
-            ))}
+            {detailedNavLinks.map(({ num, label, href, desc }) => {
+              const isActive =
+                (href === '/solutions' && isSolutionsActive) ||
+                (href === '/services' && isServicesActive) ||
+                (href === '/about' && isAboutActive) ||
+                (href === '/contact' && isContactActive) ||
+                pathname === href;
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`drawer-nav-item ${isActive ? 'is-active' : ''}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <span className="drawer-item-num">{num}</span>
+                  <span className="drawer-item-content">
+                    <span className="drawer-item-label">{label}</span>
+                    <span className="drawer-item-desc">{desc}</span>
+                  </span>
+                  <ChevronRight size={16} className="drawer-item-arrow" />
+                </Link>
+              );
+            })}
           </nav>
 
           {/* PWA App Install Action */}

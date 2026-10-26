@@ -1,6 +1,13 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/enquire",
+      "destination": "/enquiry",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/googlee2fa6752e72140d2.html",

@@ -89,9 +89,10 @@ export default function RootLayout({
                   },
                   geo: {
                     '@type': 'GeoCoordinates',
-                    latitude: 27.7172,
-                    longitude: 85.324,
+                    latitude: 27.6871385,
+                    longitude: 85.3039602,
                   },
+                  hasMap: 'https://maps.google.com/?cid=2143714271384015274',
                   openingHoursSpecification: {
                     '@type': 'OpeningHoursSpecification',
                     dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

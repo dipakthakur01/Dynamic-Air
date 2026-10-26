@@ -9,7 +9,7 @@ export const business: BusinessConfig = {
   phone2: '9715023725',
   whatsapp: '9779715023725', // International format for WhatsApp API: 977 9715023725
   address: 'Kathmandu, Nepal',
-  mapsUrl: '',
+  mapsUrl: 'https://maps.google.com/?cid=2143714271384015274',
   openingHours: 'Sun – Fri: 9:00 AM – 6:30 PM',
   logo: '/images/dynamic-air-logo.png',
   footerLogo: '/images/dynamic-air-logo.png',

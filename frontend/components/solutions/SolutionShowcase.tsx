@@ -144,7 +144,7 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
         <div className="container">
           {/* Top Breadcrumb & Back Link */}
           <div className="solution-page-header-top">
-            <Link href="/#solutions" className="solution-back-btn">
+            <Link href="/solutions" className="solution-back-btn">
               <ArrowLeft size={16} />
               <span>Back to All Solutions</span>
             </Link>

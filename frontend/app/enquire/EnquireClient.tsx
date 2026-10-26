@@ -229,7 +229,7 @@ Please share equipment availability, on-site assessment schedule, and quotation.
         <div className="container" style={{ paddingTop: '28px', paddingBottom: '70px' }}>
           {/* Top Breadcrumb */}
           <div className="solution-page-header-top" style={{ marginBottom: '24px' }}>
-            <Link href="/#home" className="solution-back-btn">
+            <Link href="/" className="solution-back-btn">
               <ArrowLeft size={16} />
               <span>Back to Home</span>
             </Link>
@@ -302,15 +302,22 @@ Please share equipment availability, on-site assessment schedule, and quotation.
                   </div>
                 </div>
 
-                <div className="contact-card-item">
+                <a
+                  href={business.mapsUrl || 'https://maps.google.com/?cid=2143714271384015274'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card-item"
+                  title="Open Dynamic Air Solutions in Google Maps"
+                  style={{ textDecoration: 'none' }}
+                >
                   <div className="card-item-icon">
                     <MapPin size={18} />
                   </div>
                   <div className="card-item-content">
                     <span className="card-item-label">Kathmandu Engineering Hub</span>
-                    <span className="card-item-val">{business.address}</span>
+                    <span className="card-item-val">{business.address} &rarr;</span>
                   </div>
-                </div>
+                </a>
 
                 <div className="contact-card-item">
                   <div className="card-item-icon">
@@ -343,6 +350,40 @@ Please share equipment availability, on-site assessment schedule, and quotation.
                     <Check size={14} />
                     <span>1-Year comprehensive warranty & AMC</span>
                   </div>
+                </div>
+              </div>
+
+              {/* Interactive Google Maps Card */}
+              <div className="enquire-map-card">
+                <div className="enquire-map-header">
+                  <div className="enquire-map-info">
+                    <span className="enquire-map-badge">
+                      <MapPin size={13} /> KATHMANDU HUB LOCATION
+                    </span>
+                    <h4 className="enquire-map-title">Dynamic Air Solutions Pvt. Ltd.</h4>
+                  </div>
+                  <a
+                    href={business.mapsUrl || 'https://maps.google.com/?cid=2143714271384015274'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="enquire-directions-link"
+                    title="Open Dynamic Air Solutions in Google Maps"
+                  >
+                    <span>Open in Maps</span>
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+                <div className="enquire-map-frame-box">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.975939973865!2d85.30396019999999!3d27.6871385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19767fd824a1%3A0x1dbfef658cc711aa!2sDynamic%20Air%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2snp!4v1792977855296!5m2!1sen!2snp"
+                    width="100%"
+                    height="260"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    title="Dynamic Air Solutions Pvt Ltd Location Map"
+                  />
                 </div>
               </div>
             </div>

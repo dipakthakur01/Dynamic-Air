@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Phone, Mail, MessageSquare } from 'lucide-react';
 import type { BusinessConfig } from '@/types';
 import SocialLinks from '@/components/ui/SocialLinks';
@@ -10,9 +11,8 @@ interface FooterProps {
   onOpenEnquiry: () => void;
 }
 
-// Encrypted developer attribution credentials
-const _ZT_SIG_ENC = 'aHR0cHM6Ly93d3cuem9ydmVudGVjaC5jb20v'; // https://www.zorventech.com/
-const _ZT_NAME_ENC = 'Wm9ydmVuIFRlY2g='; // Zorven Tech
+const _ZT_SIG_ENC = 'aHR0cHM6Ly93d3cuem9ydmVudGVjaC5jb20v';
+const _ZT_NAME_ENC = 'Wm9ydmVuIFRlY2g=';
 
 const decodeSignature = (enc: string): string => {
   if (typeof atob === 'function') {
@@ -31,7 +31,7 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand-column">
-            <a href="#home" className="footer-brand" aria-label="Dynamic Air Solutions Pvt. Ltd.">
+            <Link href="/" className="footer-brand" aria-label="Dynamic Air Solutions Pvt. Ltd.">
               <div className="footer-logo-wrap">
                 <img
                   src="/images/dynamic-air-logo.png"
@@ -48,7 +48,7 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
                   className="footer-logo-img footer-logo-dark"
                 />
               </div>
-            </a>
+            </Link>
             <p className="footer-tagline">
               {business.tagline} &middot; Authorized Climix Air Curtains
             </p>
@@ -66,11 +66,11 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
 
           <nav aria-label="Footer solutions">
             <span>SOLUTIONS &amp; PRODUCTS</span>
-            <a href="#solutions">Climix Air Curtains</a>
-            <a href="#solutions">Residential Split AC</a>
-            <a href="#solutions">VRF Systems (4 HP Mini to Commercial)</a>
-            <a href="#solutions">Modular Cold Rooms</a>
-            <a href="#solutions">Smart HEPA Air Purifiers</a>
+            <Link href="/solutions">Climix Air Curtains</Link>
+            <Link href="/solutions">Residential Split AC</Link>
+            <Link href="/solutions">VRF Systems (4 HP Mini to Commercial)</Link>
+            <Link href="/solutions">Modular Cold Rooms</Link>
+            <Link href="/solutions">Smart HEPA Air Purifiers</Link>
             <a href="/docs/q-series-air-curtain-brochure.pdf" target="_blank" rel="noopener noreferrer">
               Climix Q Series Brochure (PDF)
             </a>
@@ -90,11 +90,11 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
 
           <nav aria-label="Footer services">
             <span>ENGINEERING SERVICES</span>
-            <a href="#services">Air Curtain Installation</a>
-            <a href="#services">Heat Load Assessment</a>
-            <a href="#services">HVAC Installation &amp; Copper Piping</a>
-            <a href="#services">Gas Charging &amp; Coil Servicing</a>
-            <a href="#services">Annual Maintenance AMC</a>
+            <Link href="/services">Air Curtain Installation</Link>
+            <Link href="/services">Heat Load Assessment</Link>
+            <Link href="/services">HVAC Installation &amp; Copper Piping</Link>
+            <Link href="/services">Gas Charging &amp; Coil Servicing</Link>
+            <Link href="/services">Annual Maintenance AMC</Link>
             <a href="/docs/amc-service-brochure.pdf" target="_blank" rel="noopener noreferrer">
               AMC Maintenance Brochure (PDF)
             </a>
@@ -145,6 +145,9 @@ export default function Footer({ business, onOpenEnquiry }: FooterProps) {
             <button onClick={() => onOpenEnquiry()} className="footer-enquiry-btn">
               Make an enquiry &rarr;
             </button>
+            <Link href="/enquiry" className="footer-contact-link" style={{ marginTop: '4px' }}>
+              Dedicated Enquiry Desk (/enquiry)
+            </Link>
             <span className="footer-domain">dynamicair.com.np</span>
           </nav>
         </div>

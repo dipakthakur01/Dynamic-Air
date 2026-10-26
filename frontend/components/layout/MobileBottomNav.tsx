@@ -18,6 +18,7 @@ export default function MobileBottomNav({
 }: MobileBottomNavProps) {
   const pathname = usePathname();
   const isSolutionsActive = pathname?.startsWith('/solutions');
+  const isServicesActive = pathname?.startsWith('/services');
   const isHomeActive = pathname === '/' && !menuOpen;
 
   return (
@@ -27,8 +28,8 @@ export default function MobileBottomNav({
     >
       <div className="mobile-bottom-nav-inner">
         <Link
-          href="/#home"
-          className={`mobile-nav-tab ${isHomeActive && !isSolutionsActive ? 'is-active' : ''}`}
+          href="/"
+          className={`mobile-nav-tab ${isHomeActive && !isSolutionsActive && !isServicesActive ? 'is-active' : ''}`}
           aria-label="Home"
         >
           <span className="mobile-nav-icon">
@@ -38,7 +39,7 @@ export default function MobileBottomNav({
         </Link>
 
         <Link
-          href="/#solutions"
+          href="/solutions"
           className={`mobile-nav-tab ${isSolutionsActive ? 'is-active' : ''}`}
           aria-label="Solutions"
         >
@@ -63,8 +64,8 @@ export default function MobileBottomNav({
         </button>
 
         <Link
-          href="/#services"
-          className="mobile-nav-tab"
+          href="/services"
+          className={`mobile-nav-tab ${isServicesActive ? 'is-active' : ''}`}
           aria-label="HVAC Services"
         >
           <span className="mobile-nav-icon">

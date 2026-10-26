@@ -39,12 +39,12 @@ export default function manifest(): MetadataRoute.Manifest {
     shortcuts: [
       {
         name: 'Air Curtains & Solutions',
-        url: '/#solutions',
+        url: '/solutions',
         description: 'Climix Q Series Air Curtains & HVAC Solutions',
       },
       {
         name: 'Make an Enquiry',
-        url: '/#contact',
+        url: '/enquiry',
         description: 'Quick HVAC Consultation & Quotation',
       },
       {
