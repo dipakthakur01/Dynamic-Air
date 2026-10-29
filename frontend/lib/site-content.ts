@@ -3,7 +3,7 @@ import type { BusinessConfig, Category, Product, Service, FaqItem } from '@/type
 export const business: BusinessConfig = {
   name: 'Dynamic Air Solutions Pvt. Ltd.',
   tagline: 'Complete Air Conditioning Solution',
-  domain: 'https://dynamicair.com.np',
+  domain: 'https://www.dynamicair.com.np',
   email: 'sdynamicair@gmail.com',
   phone: '9851123725',
   phone2: '9715023725',
@@ -31,7 +31,7 @@ export const products: Product[] = [
     label: 'CROSS FLOW WIND CURTAIN',
     image: '/images/climix-air-curtain-hero.png',
     description:
-      'Heavy-duty cross flow air curtain with pure copper motor (8,000 hrs rating), two-speed switching, intelligent remote control, and rust-resistant metal casing. Creates an effective thermal and dust barrier up to 3m height.',
+      'Authorized Climix Q Series Cross Flow Air Curtain supplier in Nepal. Heavy-duty pure copper motor (8,000 hrs rating), two-speed switching, intelligent wireless remote control, and rust-resistant metal casing. Creates an effective thermal, dust, and flying insect barrier up to 3m height across commercial and industrial doorways in Kathmandu and across Nepal.',
     features: [
       'Pure copper motor: 11 m/s wind speed, up to 3,800 m³/h airflow',
       'High & low dual speed switching with intelligent remote control',
@@ -52,7 +52,7 @@ export const products: Product[] = [
     label: 'ENERGY SAVING & DUSTPROOF',
     image: '/images/air-curtain-applications.png',
     description:
-      'Keep conditioned cool air inside and prevent outdoor heat, dust, flying insects, and exhaust smoke from entering high-traffic doorways. Cuts HVAC electricity bills drastically.',
+      'Commercial entrance air barrier systems and air curtains in Nepal. Keep conditioned cool air inside and prevent outdoor heat, dust, flying insects, and vehicle exhaust smoke from entering high-traffic doorways. Drastically cuts air conditioning electricity bills for shops, supermarkets, and restaurants across Kathmandu.',
     features: [
       'Strong wind power with dustproof and thermal insulation barrier',
       'Preserves indoor clean air in food, medical, and hospitality zones',
@@ -70,7 +70,7 @@ export const products: Product[] = [
     label: 'HIGH-VELOCITY DOORWAY BARRIER',
     image: '/images/industrial-air-curtain.jpg',
     description:
-      'Powerful centrifugal airflow barrier engineered for doorways up to 4.5 meters height. Designed with heavy-duty corrosion-resistant casing, high-pressure centrifugal blowers, and industrial dust protection.',
+      'Heavy-duty industrial centrifugal airflow barrier engineered for doorways up to 4.5 meters height in Nepal. Designed with corrosion-resistant metal casing, high-velocity blowers (up to 20 m/s), and industrial dust protection for warehouses, food factories, and cold storage facilities.',
     features: [
       'High-velocity centrifugal wind barrier up to 20 m/s air speed',
       'Corrosion-resistant metal casing for demanding environments',
@@ -92,7 +92,7 @@ export const products: Product[] = [
     label: 'RESIDENTIAL HOME COOLING',
     image: '/images/residential-split-ac.jpg',
     description:
-      'Engineered specifically for residential living rooms, bedrooms, and apartments across Kathmandu and Nepal. Available in both high-efficiency Inverter and durable Non-Inverter (Normal) configurations to match your household comfort and budget.',
+      'High-efficiency Inverter and Normal Wall-Mounted Split Air Conditioners (AC) engineered for homes, living rooms, and apartments across Kathmandu and Nepal. Available in 1.0 Ton, 1.5 Ton, and 2.0 Ton capacities with 100% inner grooved copper piping, rapid turbo cooling, and low electricity power consumption.',
     features: [
       'Available in both DC Inverter (high energy savings) and Non-Inverter (Normal) models',
       'Maximum application for residential purposes: bedrooms, apartments, and villas',
@@ -115,7 +115,7 @@ export const products: Product[] = [
     label: '4 HP MINI VRF TO LARGE COMMERCIAL HVAC',
     image: '/images/commercial-vrf-system.jpg',
     description:
-      'Comprehensive 100% Inverter VRF / VRV (Variable Refrigerant Flow) systems spanning from 4 HP Residential Mini VRF for luxury villas, apartments, and duplexes up to high-capacity modular commercial HVAC banks (up to 96+ HP). Connects heavy-duty outdoor rooftop condenser units to multiple indoor ceiling cassette, duct, and wall units with individual zone climate control.',
+      'Turnkey 100% Inverter VRF / VRV (Variable Refrigerant Flow) Air Conditioning systems in Nepal, spanning from 4 HP Residential Mini VRF for luxury villas and duplexes up to high-capacity modular commercial HVAC banks (up to 96+ HP) for multi-story buildings, corporate offices, hotels, and hospitals across Kathmandu.',
     features: [
       'Full capacity range: 4 HP Residential Mini VRF up to 96+ HP large commercial modular VRF systems',
       'Residential Mini VRF (from 4 HP): compact footprint and whisper-quiet outdoor operation tailored for villas and duplex residences',
@@ -138,7 +138,7 @@ export const products: Product[] = [
     label: '360° OFFICE & SHOWROOM AIRFLOW',
     image: '/images/cassette-ac.jpg',
     description:
-      'Flush-mount ceiling cassette system delivering uniform 360-degree circular airflow with zero dead zones. Primarily utilized for modern office spaces, retail showrooms, and restaurants; available in both Inverter and Non-Inverter types.',
+      'Flush-mount 4-Way Ceiling Cassette Inverter Air Conditioner (AC) in Nepal delivering uniform 360-degree circular cooling and heating with zero dead zones. Engineered for commercial office spaces, bank branches, retail showrooms, and restaurants. Available in 2.0TR, 3.0TR, and 4.0TR with built-in drain pump.',
     features: [
       'Available in both Inverter and Non-Inverter (Normal) configurations',
       'Mainly used for modern office spaces, banks, retail showrooms, and conference halls',
@@ -161,7 +161,7 @@ export const products: Product[] = [
     label: 'CHILLER & FREEZER TEMPERATURE',
     image: '/images/cold-room.jpeg',
     description:
-      'Prefabricated modular cold rooms engineered for commercial preservation and storage. Built with high-density polyurethane (PUF) insulated sandwich panels and available in both Chiller and Freezer temperature configurations.',
+      'Prefabricated modular walk-in cold rooms and commercial cold storage solutions in Nepal. Built with high-density polyurethane (PUF) insulated sandwich panels, available in both Chiller (+2°C to +8°C) and Freezer (-18°C to -25°C) configurations for food processing, supermarkets, dairy, and pharmaceuticals.',
     features: [
       'Dual temperature configurations: Chiller (+2°C to +8°C) and Freezer (-18°C to -25°C)',
       'Primary use: commercial storage of perishables, dairy, pharmaceuticals, meat & produce',
@@ -185,7 +185,7 @@ export const products: Product[] = [
     image: '/images/hepa-air-purifier.jpg',
     imageClass: 'air-purifier-img',
     description:
-      'High-performance indoor air purification system engineered to eliminate airborne dust, pollutants, allergens, and harmful germs. Featuring True HEPA + Activated Carbon filtration with 450 m³/h Clean Air Delivery Rate (CADR). Available in different sizes to match diverse room volumes and spaces across homes and executive offices.',
+      'Medical-grade True HEPA + Activated Carbon Air Purifier in Nepal with high 450 m³/h Clean Air Delivery Rate (CADR). Eliminates PM2.5 vehicle smog, Kathmandu dust, allergens, airborne bacteria, and toxic odors for residential homes and corporate executive cabins.',
     features: [
       'Available in multiple room sizes and capacities tailored for residential & commercial spaces',
       'High Clean Air Delivery Rate: CADR 450 m³/h for rapid whole-room air circulation',

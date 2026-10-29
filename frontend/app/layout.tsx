@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { faqs, products } from '@/lib/site-content';
 
 export const viewport: Viewport = {
   themeColor: [
@@ -12,12 +13,34 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dynamicair.com.np'),
-  title: 'Dynamic Air Solutions Pvt. Ltd. | Climix Air Curtains, HVAC & Cold Rooms Nepal',
+  metadataBase: new URL('https://www.dynamicair.com.np'),
+  title: {
+    default: 'Dynamic Air Solutions | Air Conditioners (AC), Climix Air Curtains & HVAC Nepal',
+    template: '%s | Dynamic Air Solutions Nepal',
+  },
   description:
-    'Dynamic Air Solutions Pvt. Ltd. – Authorized Climix Q Series Cross Flow Air Curtains, Residential Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Professional HVAC Installation & AMC in Kathmandu, Nepal. Contact: 9851123725 / 9715023725.',
+    'Dynamic Air Solutions Nepal - Authorized Climix Air Curtains, Inverter Split AC, Commercial VRF Systems, Modular Cold Rooms & HVAC Engineering in Kathmandu. Tel: 9851123725 / 9715023725.',
+  keywords: [
+    'Air Conditioner Nepal',
+    'AC Price in Nepal',
+    'Inverter Split AC Nepal',
+    'Air Curtain Nepal',
+    'Climix Air Curtain',
+    'Commercial Air Curtain Kathmandu',
+    'HVAC Nepal',
+    'Commercial VRF System Nepal',
+    'Ceiling Cassette AC Nepal',
+    'Cold Room Nepal',
+    'Cold Storage Solutions Nepal',
+    'Smart HEPA Air Purifier Nepal',
+    'AC Repair Kathmandu',
+    'AC Servicing AMC Nepal',
+    'Dynamic Air Solutions Kathmandu',
+  ],
   manifest: '/manifest.json',
-  alternates: { canonical: '/' },
+  alternates: {
+    canonical: 'https://www.dynamicair.com.np',
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -39,13 +62,37 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_NP',
     siteName: 'Dynamic Air Solutions Pvt. Ltd.',
-    title: 'Dynamic Air Solutions Pvt. Ltd. | Complete Air Conditioning & Cold Storage Solution',
+    title: 'Dynamic Air Solutions | Air Conditioners (AC), Climix Air Curtains & HVAC Nepal',
     description:
-      'Authorized Climix Air Curtains, Residential Split ACs, Commercial VRF Systems, Modular Cold Rooms & HVAC Engineering Services in Nepal. Tel: 9851123725 / 9715023725.',
-    url: 'https://dynamicair.com.np',
-    images: [{ url: '/images/dynamic-air-logo.png', width: 1200, height: 630, alt: 'Dynamic Air Solutions' }],
+      'Authorized Climix Air Curtains, Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms & HVAC Engineering Services in Nepal. Tel: 9851123725 / 9715023725.',
+    url: 'https://www.dynamicair.com.np',
+    images: [
+      {
+        url: '/images/dynamic-air-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dynamic Air Solutions Nepal',
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dynamic Air Solutions | Air Conditioners (AC), Climix Air Curtains & HVAC Nepal',
+    description:
+      'Authorized Climix Air Curtains, Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms & HVAC Engineering in Nepal. Tel: 9851123725 / 9715023725.',
+    images: ['/images/dynamic-air-logo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   verification: {
     google: 'googlee2fa6752e72140d2',
   },
@@ -56,6 +103,110 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'HVACBusiness',
+        '@id': 'https://www.dynamicair.com.np/#business',
+        name: 'Dynamic Air Solutions Pvt. Ltd.',
+        alternateName: [
+          'Dynamic Air Solutions',
+          'Dynamic Air Nepal',
+          'Climix Nepal',
+          'Dynamic Air Solutions Kathmandu',
+        ],
+        url: 'https://www.dynamicair.com.np',
+        logo: 'https://www.dynamicair.com.np/images/dynamic-air-logo.png',
+        image: 'https://www.dynamicair.com.np/images/climix-air-curtain-hero.png',
+        description:
+          'Authorized Climix Distributor and premier HVAC engineering contractor in Nepal. Supplying Climix Q Series Cross Flow Air Curtains, Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Smart HEPA Air Purifiers with professional installation and AMC support across Kathmandu and Nepal.',
+        telephone: ['+977-9851123725', '+977-9715023725'],
+        email: 'sdynamicair@gmail.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Kathmandu Engineering Hub',
+          addressLocality: 'Kathmandu',
+          addressRegion: 'Bagmati Province',
+          postalCode: '44600',
+          addressCountry: 'NP',
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 27.6871385,
+          longitude: 85.3039602,
+        },
+        hasMap: 'https://maps.google.com/?cid=2143714271384015274',
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '09:00',
+            closes: '18:30',
+          },
+        ],
+        priceRange: '$$',
+        currenciesAccepted: 'NPR',
+        paymentAccepted: 'Cash, Bank Transfer, Fonepay, Cheque',
+        areaServed: [
+          { '@type': 'City', name: 'Kathmandu' },
+          { '@type': 'City', name: 'Lalitpur' },
+          { '@type': 'City', name: 'Bhaktapur' },
+          { '@type': 'City', name: 'Pokhara' },
+          { '@type': 'City', name: 'Birgunj' },
+          { '@type': 'Country', name: 'Nepal' },
+        ],
+        sameAs: [
+          'https://www.facebook.com/share/1C7B7pXJVV/',
+          'https://www.instagram.com/dynamicairsolution',
+          'https://www.tiktok.com/@dynamic.air.solutions',
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Air Conditioning, Air Curtains & HVAC Solutions Nepal',
+          itemListElement: products.map((prod) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Product',
+              name: prod.name,
+              url: `https://www.dynamicair.com.np/solutions/${prod.id}`,
+              description: prod.description,
+              image: `https://www.dynamicair.com.np${prod.image}`,
+            },
+          })),
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://www.dynamicair.com.np/#website',
+        url: 'https://www.dynamicair.com.np',
+        name: 'Dynamic Air Solutions Pvt. Ltd.',
+        description:
+          'Air Conditioners (AC), Climix Air Curtains, VRF Systems & Cold Rooms in Nepal',
+        publisher: {
+          '@id': 'https://www.dynamicair.com.np/#business',
+        },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://www.dynamicair.com.np/solutions?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://www.dynamicair.com.np/#faq',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
@@ -66,61 +217,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@graph': [
-                {
-                  '@type': 'HVACBusiness',
-                  '@id': 'https://dynamicair.com.np/#business',
-                  name: 'Dynamic Air Solutions Pvt. Ltd.',
-                  alternateName: 'Dynamic Air Solutions Nepal',
-                  url: 'https://dynamicair.com.np',
-                  logo: 'https://dynamicair.com.np/images/dynamic-air-logo.png',
-                  image: 'https://dynamicair.com.np/images/climix-air-curtain-hero.png',
-                  description:
-                    'Authorized Climix Distributor in Nepal. Supplying Climix Q Series Cross Flow Air Curtains, Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and Smart HEPA Air Purifiers with professional HVAC engineering, site survey, and AMC support across Kathmandu and Nepal.',
-                  telephone: ['+977-9851123725', '+977-9715023725'],
-                  email: 'sdynamicair@gmail.com',
-                  address: {
-                    '@type': 'PostalAddress',
-                    streetAddress: 'Kathmandu Engineering Hub',
-                    addressLocality: 'Kathmandu',
-                    addressCountry: 'NP',
-                  },
-                  geo: {
-                    '@type': 'GeoCoordinates',
-                    latitude: 27.6871385,
-                    longitude: 85.3039602,
-                  },
-                  hasMap: 'https://maps.google.com/?cid=2143714271384015274',
-                  openingHoursSpecification: {
-                    '@type': 'OpeningHoursSpecification',
-                    dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                    opens: '09:00',
-                    closes: '18:30',
-                  },
-                  priceRange: '$$',
-                  areaServed: {
-                    '@type': 'Country',
-                    name: 'Nepal',
-                  },
-                  sameAs: [
-                    'https://www.facebook.com/share/1C7B7pXJVV/',
-                    'https://www.instagram.com/dynamicairsolution',
-                    'https://www.tiktok.com/@dynamic.air.solutions',
-                  ],
-                },
-                {
-                  '@type': 'WebSite',
-                  '@id': 'https://dynamicair.com.np/#website',
-                  url: 'https://dynamicair.com.np',
-                  name: 'Dynamic Air Solutions Pvt. Ltd.',
-                  publisher: {
-                    '@id': 'https://dynamicair.com.np/#business',
-                  },
-                },
-              ],
-            }),
+            __html: JSON.stringify(websiteSchema),
           }}
         />
         <script

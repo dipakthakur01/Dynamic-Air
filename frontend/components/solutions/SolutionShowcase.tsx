@@ -158,14 +158,13 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
           <div className="solution-hero-heading-block">
             <div className="solution-eyebrow-accent">
               <span className="eyebrow-dash" />
-              <span>DEDICATED ARCHITECTURAL CAPABILITIES</span>
+              <span>AUTHORIZED CLIMIX DISTRIBUTOR &amp; HVAC ENGINEERING NEPAL</span>
             </div>
-            <h1 className="solution-animated-title">
-              Precision Climate &amp; Air Barrier Architecture.
-            </h1>
+            <p className="solution-animated-title">
+              Complete Air Conditioning, Climix Air Curtains &amp; Cold Storage
+            </p>
             <p className="solution-hero-sub">
-              Explore in-depth technical specifications, airflow physics, installation scopes,
-              and certified performance parameters for our full HVAC and cold storage line.
+              Explore technical specifications, door sizing, cooling tonnage, and turnkey installation support across Kathmandu &amp; Nepal.
             </p>
           </div>
 
@@ -181,9 +180,9 @@ export default function SolutionShowcase({ initialProduct }: SolutionShowcasePro
                 <span className="solution-label-pill">{selectedProduct.label}</span>
               </div>
 
-              <h2 id="active-product-title" className="solution-product-name">
-                {selectedProduct.name}
-              </h2>
+              <h1 id="active-product-title" className="solution-product-name">
+                {selectedProduct.name} in Nepal
+              </h1>
 
               {selectedProduct.specSummary && (
                 <div className="solution-spec-tagline">

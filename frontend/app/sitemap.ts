@@ -3,7 +3,7 @@ import { products } from '@/lib/site-content';
 
 export const dynamic = 'force-static';
 
-const baseUrl = 'https://dynamicair.com.np';
+const baseUrl = 'https://www.dynamicair.com.np';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/solutions/${product.id}`,
     lastModified,
     changeFrequency: 'weekly',
-    priority: 0.85,
+    priority: 0.9,
   }));
 
   return [
@@ -25,31 +25,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/solutions`,
       lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      changeFrequency: 'daily',
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/services`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: 0.85,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
       lastModified,
-      changeFrequency: 'weekly',
-      priority: 0.85,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
       lastModified,
-      changeFrequency: 'weekly',
+      changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
       url: `${baseUrl}/enquiry`,
       lastModified,
-      changeFrequency: 'weekly',
+      changeFrequency: 'monthly',
       priority: 0.85,
     },
     ...solutionRoutes,

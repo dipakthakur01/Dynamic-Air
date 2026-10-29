@@ -40,7 +40,7 @@ export default function ContactClient() {
     document.documentElement.setAttribute('data-theme', next);
     try {
       localStorage.setItem('dynamic_air_theme', next);
-    } catch {}
+    } catch { }
   };
 
   const handleOpenEnquiry = (topic?: string | unknown) => {
@@ -96,6 +96,9 @@ export default function ContactClient() {
               <span>Direct Kathmandu Office &amp; Engineering Center</span>
             </div>
           </div>
+          <h1 className="sr-only">
+            Contact Dynamic Air Solutions Kathmandu Nepal – AC, Air Curtain &amp; Cold Storage Quotations
+          </h1>
         </div>
 
         <ContactSection business={business} onOpenEnquiry={handleOpenEnquiry} />

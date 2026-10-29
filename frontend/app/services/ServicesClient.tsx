@@ -99,6 +99,9 @@ export default function ServicesClient() {
               <span>Certified HVAC Engineering &amp; Maintenance Services</span>
             </div>
           </div>
+          <h1 className="sr-only">
+            AC Repair, HVAC Installation &amp; Maintenance AMC in Kathmandu Nepal
+          </h1>
         </div>
 
         <ServicesSection

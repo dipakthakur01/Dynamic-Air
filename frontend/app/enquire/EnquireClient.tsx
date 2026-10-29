@@ -81,7 +81,7 @@ export default function EnquireClient() {
     document.documentElement.setAttribute('data-theme', next);
     try {
       localStorage.setItem('dynamic_air_theme', next);
-    } catch {}
+    } catch { }
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -125,7 +125,7 @@ Please share equipment availability, on-site assessment schedule, and quotation.
     if (typeof window !== 'undefined') {
       try {
         window.open(whatsappUrl, '_blank');
-      } catch {}
+      } catch { }
     }
 
     // Direct auto-send to email behind the scenes via FormSubmit
@@ -247,6 +247,9 @@ Please share equipment availability, on-site assessment schedule, and quotation.
                 <span className="square-bullet" /> LET’S TALK COMFORT
               </div>
               <h1 className="enquire-page-title">
+                <span className="sr-only">
+                  Make an Equipment Quotation Enquiry – Dynamic Air Solutions Nepal:{' '}
+                </span>
                 What can we
                 <br />
                 help you with?

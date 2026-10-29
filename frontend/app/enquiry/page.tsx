@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import EnquireClient from '../enquire/EnquireClient';
 
 export const metadata: Metadata = {
-  title: 'Make an Enquiry | Dynamic Air Solutions Pvt. Ltd. Nepal',
+  title: 'Make an Equipment Quotation Enquiry | Dynamic Air Solutions Nepal',
   description:
     'Submit an official project enquiry for Climix Q Series Cross Flow Air Curtains, Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and HVAC Engineering in Nepal. Instant WhatsApp & Phone: 9851123725 / 9715023725.',
   alternates: {
-    canonical: '/enquiry',
+    canonical: 'https://www.dynamicair.com.np/enquiry',
   },
   openGraph: {
     title: 'Make an Enquiry | Dynamic Air Solutions Pvt. Ltd.',
     description:
       'Official enquiry desk for Climix Air Curtains, Air Conditioning, VRF and Cold Rooms in Nepal. Connect directly via WhatsApp or phone.',
-    url: 'https://dynamicair.com.np/enquiry',
+    url: 'https://www.dynamicair.com.np/enquiry',
     siteName: 'Dynamic Air Solutions Pvt. Ltd.',
     images: [{ url: '/images/climix-air-curtain-hero.png', width: 1200, height: 630, alt: 'Dynamic Air Enquiry Desk' }],
     locale: 'en_NP',
@@ -32,13 +32,13 @@ const enquiryJsonLd = {
   '@graph': [
     {
       '@type': 'ContactPage',
-      '@id': 'https://dynamicair.com.np/enquiry#webpage',
-      url: 'https://dynamicair.com.np/enquiry',
+      '@id': 'https://www.dynamicair.com.np/enquiry#webpage',
+      url: 'https://www.dynamicair.com.np/enquiry',
       name: 'Make an Enquiry | Dynamic Air Solutions Pvt. Ltd.',
       description:
         'Submit an official project enquiry for Climix Q Series Cross Flow Air Curtains, Inverter Split ACs, Commercial VRF Systems, Modular Cold Rooms, and HVAC Engineering in Nepal.',
       isPartOf: {
-        '@id': 'https://dynamicair.com.np/#business',
+        '@id': 'https://www.dynamicair.com.np/#business',
       },
       breadcrumb: {
         '@type': 'BreadcrumbList',
@@ -47,13 +47,13 @@ const enquiryJsonLd = {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://dynamicair.com.np',
+            item: 'https://www.dynamicair.com.np',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Make an Enquiry',
-            item: 'https://dynamicair.com.np/enquiry',
+            item: 'https://www.dynamicair.com.np/enquiry',
           },
         ],
       },

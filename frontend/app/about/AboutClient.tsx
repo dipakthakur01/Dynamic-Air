@@ -100,6 +100,9 @@ export default function AboutClient() {
               <span>Authorized Climix Air Curtains &amp; Climate Solutions Partner</span>
             </div>
           </div>
+          <h1 className="sr-only">
+            About Dynamic Air Solutions – Authorized Climix Distributor &amp; HVAC Engineering in Nepal
+          </h1>
         </div>
 
         <AboutSection onOpenEnquiry={handleOpenEnquiry} />

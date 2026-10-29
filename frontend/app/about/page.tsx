@@ -2,19 +2,33 @@ import type { Metadata } from 'next';
 import AboutClient from './AboutClient';
 
 export const metadata: Metadata = {
-  title: 'About Us | Dynamic Air Solutions Pvt. Ltd. Nepal',
+  title: 'About Us | Dynamic Air Solutions - Climix & HVAC Specialist Nepal',
   description:
-    'About Dynamic Air Solutions Pvt. Ltd. – Authorized Distributor of Climix Q Series Cross Flow Air Curtains, Inverter Split ACs, Commercial VRF Systems, and Modular Cold Rooms in Nepal. Dedicated HVAC engineering and support.',
+    'Learn about Dynamic Air Solutions Pvt. Ltd. - Authorized Climix Q Series Cross Flow Air Curtains distributor, Inverter Split ACs, Commercial VRF Systems, and Modular Cold Rooms in Kathmandu, Nepal.',
+  keywords: [
+    'About Dynamic Air Solutions Nepal',
+    'Climix air curtain distributor Nepal',
+    'HVAC company Kathmandu',
+    'Commercial AC contractor Nepal',
+    'Cold room contractor Nepal',
+  ],
   alternates: {
-    canonical: '/about',
+    canonical: 'https://www.dynamicair.com.np/about',
   },
   openGraph: {
-    title: 'About Dynamic Air Solutions Pvt. Ltd. | Authorized Climix Distributor Nepal',
+    title: 'About Dynamic Air Solutions | Authorized Climix Distributor Nepal',
     description:
       'Learn about our engineering philosophy, working process, and verified HVAC capabilities across Kathmandu and Nepal.',
-    url: 'https://dynamicair.com.np/about',
+    url: 'https://www.dynamicair.com.np/about',
     siteName: 'Dynamic Air Solutions Pvt. Ltd.',
-    images: [{ url: '/images/climix-air-curtain-hero.png', width: 1200, height: 630, alt: 'About Dynamic Air Solutions' }],
+    images: [
+      {
+        url: '/images/climix-air-curtain-hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Dynamic Air Solutions Nepal',
+      },
+    ],
     locale: 'en_NP',
     type: 'website',
   },
@@ -32,13 +46,13 @@ const aboutJsonLd = {
   '@graph': [
     {
       '@type': 'AboutPage',
-      '@id': 'https://dynamicair.com.np/about#webpage',
-      url: 'https://dynamicair.com.np/about',
+      '@id': 'https://www.dynamicair.com.np/about#webpage',
+      url: 'https://www.dynamicair.com.np/about',
       name: 'About Dynamic Air Solutions Pvt. Ltd.',
       description:
         'Authorized Climix air curtain distributor and HVAC engineering specialist in Nepal.',
       isPartOf: {
-        '@id': 'https://dynamicair.com.np/#business',
+        '@id': 'https://www.dynamicair.com.np/#business',
       },
       breadcrumb: {
         '@type': 'BreadcrumbList',
@@ -47,13 +61,13 @@ const aboutJsonLd = {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://dynamicair.com.np',
+            item: 'https://www.dynamicair.com.np',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'About',
-            item: 'https://dynamicair.com.np/about',
+            item: 'https://www.dynamicair.com.np/about',
           },
         ],
       },

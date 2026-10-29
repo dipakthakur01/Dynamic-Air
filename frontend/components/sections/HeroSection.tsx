@@ -52,6 +52,9 @@ export default function HeroSection({
             {currentSlide.overline}
           </div>
           <h1>
+            <span className="sr-only">
+              Dynamic Air Solutions Nepal – Climix Air Curtains, Inverter Split AC &amp; Commercial HVAC:{' '}
+            </span>
             <span>{currentSlide.line1}</span>
             <span className="accent-text">{currentSlide.line2}</span>
           </h1>
